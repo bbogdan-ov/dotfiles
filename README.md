@@ -49,6 +49,13 @@ a.conf = $HOME/.a.conf
 src/b.conf = $MY_ENV/.b.conf
 ```
 
+**after you are done creating config files, run `linkall.sh` to link all files:**
+```bash
+./linkall.sh
+```
+
+**hooray!**
+
 ## P.S.
 
 *this repository is dedicated to my lost dotfiles*

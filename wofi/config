@@ -1,0 +1,14 @@
+show = drun
+prompt = run
+
+width = 300
+height = 401
+x = 20
+y = 20
+
+allow_images = false
+insensitive = true
+no_actions = true
+hide_scroll = true
+
+gtk_dark = true

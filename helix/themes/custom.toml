@@ -1,0 +1,90 @@
+# UI
+"ui.cursorline.primary"     = { bg = "lightblack" }
+"ui.cursorline.secondary"   = { bg = "lightblack" }
+"ui.cursorcolumn.primary"   = { bg = "lightblack" }
+"ui.cursorcolumn.secondary" = { bg = "lightblack" }
+
+"ui.cursor"                = { fg = "black", bg = "white" }
+"ui.cursor.normal"         = { fg = "black", bg = "blue" }
+"ui.cursor.insert"         = { fg = "black", bg = "green" }
+"ui.cursor.select"         = { fg = "black", bg = "magenta" }
+"ui.cursor.primary"        = { fg = "black", bg = "white" }
+"ui.cursor.primary.normal" = { fg = "black", bg = "white" }
+"ui.cursor.primary.insert" = { fg = "black", bg = "white" }
+"ui.cursor.primary.select" = { fg = "black", bg = "white" }
+"ui.cursor.match"          = { fg = "yellow", modifiers = ["underlined"] }
+
+"ui.selection"         = { bg = "darkgray" }
+"ui.selection.primary" = { bg = "darkgray" }
+
+"ui.linenr"          = { fg = "gray" }
+"ui.linenr.selected" = { fg = "lightgray" }
+
+"ui.bufferline.background" = { fg = "gray", bg = "black" }
+"ui.bufferline.active"     = { fg = "white", bg = "lightblack" }
+"ui.bufferline.inactive"   = { fg = "gray", bg = "black" }
+
+# Statusline
+"ui.statusline" = { fg   = "lightgray", bg = "black" }
+"ui.statusline.active"   = { fg = "lightgray", bg = "black" }
+"ui.statusline.inactive" = { fg = "gray", bg = "black" }
+
+"ui.virtual.ruler"        = { fg = "#ff0000" }
+"ui.virtual.indent-guide" = { fg = "lightblack" }
+"ui.virtual.inlay-hint"   = { fg = "gray", bg = "#161616" }
+
+"ui.menu"          = { fg = "white", bg = "lightblack" }
+"ui.menu.selected" = { fg = "black", bg = "white", modifiers = ["bold"] }
+"ui.menu.scroll"   = { fg = "gray", bg = "lightblack" }
+
+"ui.popup" = { fg = "white", bg = "lightblack" }
+
+"ui.highlight" = { fg = "#ffff00" }
+
+error   = { fg = "red" }
+warning = { fg = "yellow" }
+info    = { fg = "cyan" }
+hint    = { fg = "magenta" }
+"diagnostic"         = { underline = { color = "white", style = "curl" } }
+"diagnostic.error"   = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info"    = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint"    = { underline = { color = "magenta", style = "curl" } }
+
+# Syntax
+type               = { fg = "yellow" }
+constructor        = { fg = "lightblue" }
+constant           = { fg = "lightcyan" }
+"constant.builtin" = { fg = "yellow" }
+"constant.numeric" = { fg = "yellow" }
+string             = { fg = "green" }
+comment            = { fg = "gray" }
+variable           = { fg = "lightcyan" }
+label              = { fg = "#ff0000" }
+punctuation        = { fg = "cyan" }
+keyword            = { fg = "magenta" }
+operator           = { fg = "cyan" }
+function           = { fg = "blue" }
+tag                = { fg = "blue" }
+namespace          = { fg = "lightblue" }
+special            = { fg = "cyan" }
+"diff.plus"        = { fg = "green" }
+"diff.minus"       = { fg = "red" }
+"diff.delta"       = { fg = "blue" }
+"constant.character.escape" = { fg = "cyan" }
+
+[palette]
+black      = "#111111"
+lightblack = "#222222"
+darkgray   = "#333333"
+gray       = "#555555"
+lightgray  = "#b5b5b5"
+white      = "#dadada"
+red        = "#fb5f68"
+yellow     = "#fadf65"
+green      = "#a4cd51"
+cyan       = "#96d8ff"
+lightcyan  = "#c1d7ff"
+blue       = "#7998ff"
+lightblue  = "#94b7ff"
+magenta    = "#bf93ff"

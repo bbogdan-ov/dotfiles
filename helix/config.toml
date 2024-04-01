@@ -1,0 +1,97 @@
+theme = "custom"
+
+[editor]
+bufferline = "always"
+color-modes = true
+auto-format = false
+completion-trigger-len = 1
+line-number = "relative"
+auto-pairs = false
+mouse = false
+middle-click-paste = false
+scrolloff = 8
+
+[editor.lsp]
+display-messages = true
+
+[editor.search]
+smart-case = false
+
+[editor.indent-guides]
+render = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+ignore = true
+git-ignore = true
+
+[editor.statusline]
+left = ["spacer", "diagnostics", "spinner"]
+right = ["read-only-indicator", "file-modification-indicator", "file-name", "workspace-diagnostics", "register", "selections", "file-encoding", "file-type", "position", "position-percentage", "spacer"]
+separator = " "
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
+
+[keys.normal]
+C-x = "normal_mode"
+C-c = "normal_mode"
+H = "extend_to_first_nonwhitespace"
+L = "extend_to_line_end"
+C-h = "goto_first_nonwhitespace"
+C-l = "goto_line_end"
+"}" = "goto_next_paragraph"
+"{" = "goto_prev_paragraph"
+K = "flip_selections"
+C-A-j = "copy_selection_on_next_line"
+C-A-k = "copy_selection_on_prev_line"
+tab = "goto_next_buffer"
+S-tab = "goto_previous_buffer"
+D = "kill_to_line_end"
+C = "kill_to_line_start"
+C-m = "save_selection"
+C-s = "decrement"
+right = "no_op"
+left = "no_op"
+up = "no_op"
+down = "no_op"
+[keys.normal.space]
+"!" = ":config-reload"
+c = "toggle_comments"
+w = ":buffer-close"
+n = ":new"
+
+[keys.insert]
+C-x = "normal_mode"
+C-c = "normal_mode"
+C-space = "completion"
+C-h = "move_char_left"
+C-j = "move_line_down"
+C-k = "move_line_up"
+C-l = "move_char_right"
+C-right = "move_next_word_end"
+C-left = "move_prev_word_start"
+C-p = "paste_before"
+tab = "insert_tab"
+
+[keys.select]
+C-x = "normal_mode"
+C-c = "normal_mode"
+space.c = "toggle_comments"
+H = "extend_to_first_nonwhitespace"
+L = "extend_to_line_end"
+C-h = "goto_first_nonwhitespace"
+C-l = "goto_line_end"
+"}" = "goto_next_paragraph"
+"{" = "goto_prev_paragraph"
+K = "flip_selections"
+C-A-j = "copy_selection_on_next_line"
+C-A-k = "copy_selection_on_prev_line"
+right = "no_op"
+left = "no_op"
+up = "no_op"
+down = "no_op"

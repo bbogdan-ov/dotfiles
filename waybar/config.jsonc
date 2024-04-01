@@ -1,0 +1,111 @@
+{
+	"layer": "bottom",
+	"height": 34,
+	"margin": "10 10 0 10",
+
+	"modules-left": ["custom/icon", "hyprland/workspaces", "hyprland/window"],
+	"modules-right": ["tray", "pulseaudio", "group/network-group", "group/bluetooth-group", "group/battery-group", "clock"],
+
+	// Left
+	"custom/icon": {
+		"format": "󰣇 ",
+		"on-click": "wofi -S drun"
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1"
+	},
+	"hyprland/window": {
+		"format": "{}"
+	},
+
+	// Right
+	"tray": {
+		"spacing": 10
+	},
+	"pulseaudio": {
+		"format": "<span size='medium'>{icon}</span> {volume}%",
+		"format-muted": "󰸈 muted",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+		"scroll-step": 5,
+		"tooltip-format": "󰕾 {volume}%",
+		"format-icons": {
+			"headphone": "󰋋",
+			"hands-free": "free",
+			"phone": "󰏲",
+			"portable": "portable",
+			"car": "󰞫 ",
+			"default": ["󰕿", "󰖀", "󰕾"]
+		}
+	},
+
+	"group/network-group": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 300
+		},
+		"modules": ["network", "network#strength"]
+	},
+	"network": {
+		"format": "{icon}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-disconnected": "󰤭",
+		"tooltip-format": "󰤨  {essid} - {iframe}"
+	},
+	"network#strength": {
+		"format": "{signalStrength}%",
+		"tooltip": false
+	},
+
+	"group/bluetooth-group": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 300
+		},
+		"modules": ["bluetooth"]
+	},
+	"bluetooth": {
+		"format": "󰂲",
+		"format-disabled": "󰂲",
+		"format-connected": "󰂱",
+		"tooltip-format": "no connection",
+		"tooltip-format-connected": "󰂯 {device_alias}"
+	},
+
+	"group/battery-group": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 300
+		},
+		"modules": ["battery", "battery#capacity"]
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon}",
+		"tooltip-format": "󰁹 {capacity}%\n󰥔 {time}",
+		"format-charging": "󱐋",
+		"format-plugged": "󱐋",
+		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+	},
+	"battery#capacity": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{capacity}%",
+		"tooltip": false
+	},
+
+	"clock": {
+		"format": "{:%H:%M}",
+		"tooltip-format": "󰃮 {:%d %h}"
+	}
+}

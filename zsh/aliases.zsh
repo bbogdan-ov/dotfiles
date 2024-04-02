@@ -51,5 +51,5 @@ alias vol-toggle="pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 # Functions
 function count_lines() {
-	find $1 | xargs wc -l
+	find $1 -type f | xargs wc -l
 }

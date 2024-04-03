@@ -26,3 +26,7 @@ lsp.lua_ls.setup {
 lsp.tsserver.setup {
 	capabilities = cmp_cap
 }
+
+lsp.cssls.setup {
+	capabilities = cmp_cap
+}

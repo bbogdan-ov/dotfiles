@@ -1,6 +1,4 @@
 # Aliases
-alias dots="cd $HOME/dotfiles"
-
 alias e=nvim
 alias h=helix
 
@@ -50,6 +48,9 @@ alias vol-set="pactl set-sink-volume @DEFAULT_SINK@"
 alias vol-toggle="pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 # Functions
+function dots() {
+	cd $DOTFILES/$1
+}
 function count_lines() {
 	find $1 -type f | xargs wc -l
 }

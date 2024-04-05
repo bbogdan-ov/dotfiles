@@ -10,7 +10,6 @@ DISABLE_AUTO_UPDATE=true
 # Define plugins
 plugins=(
 	git
-	sudo
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )

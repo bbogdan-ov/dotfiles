@@ -21,7 +21,7 @@ echo_err() {
 
 # Creating links
 # Iterate through all files one level below
-for file in */*; do
+for file in $(find -type f -iname link); do
 	# We need only files named "link"
 	if [[ -f $file && $file == *'link' ]]; then
 		dir=$(dirname $(realpath $file))

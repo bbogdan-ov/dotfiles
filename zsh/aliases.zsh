@@ -15,6 +15,7 @@ alias gc="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
 alias grs="git reset"
+alias gf="git fetch"
 
 alias pi="pacman -Si"
 alias psy="sudo pacman -S"
@@ -48,10 +49,12 @@ alias bdis="bluetoothctl disconnect"
 alias vol-set="pactl set-sink-volume @DEFAULT_SINK@"
 alias vol-toggle="pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
+alias src-aliases="source $DOTFILES/zsh/aliases.zsh"
+
 # Functions
 function dots() {
 	cd $DOTFILES/$1
 }
-function count_lines() {
+function count-lines() {
 	find $1 -type f | xargs wc -l
 }

@@ -35,7 +35,7 @@ return {
 	{ "n",   "R",				'"_x""P',							"Delete and paste" },
 	{ "n",   "<leader>p",       '"+p',								"Paste after from sys clipboard" },
 	{ "n",   "<leader>P",       '"+P',								"Paste before from sys clipboard" },
-	{ "n",   "<leader>y",       '"+y',								"Yank to sys clipboard" },
+	{ "nv",  "<leader>y",       '"+y',								"Yank to sys clipboard" },
 	{ "v",   "<leader>R",       '"+p',								"Delete and paste from sys clipboard" },
 	{ "nv",  "<A-d>",			'"_d',								"Delete without yunking" },
 	{ "nv",  "<A-c>",			'"_c',								"Change without yunking" },

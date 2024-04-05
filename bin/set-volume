@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+
+black="#111111"
+blue="#7998ff"
+
+volume=$1
+
+if [[ $volume == 'toggle' ]]; then
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	is_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //')
+	msg="󰕾 volume on"
+
+	if [[ $is_muted == "yes" ]]; then
+		msg="󰸈 volume off"
+	fi
+
+	notify-send \
+		-a "volume" -u low -r 9999 -t 2000 \
+		-h string:bgcolor:$blue \
+		-h string:fgcolor:$black \
+		-h string:hlcolor:$black \
+		"$msg"
+else
+	pactl set-sink-volume @DEFAULT_SINK@ $1
+	cur_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | sed 's,.* \([0-9][0-9]*\)%.*,\1,')
+
+	notify-send \
+		-a "volume" -u low -r 9999 -t 1500 \
+		-h int:value:$cur_volume \
+		-h string:bgcolor:$blue \
+		-h string:fgcolor:$black \
+		-h string:hlcolor:$black \
+		"󰕾 volume $cur_volume%"
+fi

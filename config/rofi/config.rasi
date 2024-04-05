@@ -83,7 +83,7 @@ inputbar {
 	border-color:		@border-color;
     border-radius:		@border-radius;
     background-color:	@skygray;
-	background-image:	url("~/dotfiles/rofi/header.png", width);
+	background-image:	url("~/dotfiles/config/rofi/header.png", width);
     text-color:			@text-color;
 }
 prompt, entry, textbox-prompt-colon {

@@ -1,0 +1,44 @@
+# Cmds
+cmd q :quit
+cmd touch :shell; push touch<space>
+cmd th :touch
+cmd mkdir :shell; push mkdir<space>
+cmd md :mkdir
+cmd chmod %chmod $1 $f; lf -remote "send reload"
+cmd one :set preview false; set drawbox false; set ratios 1
+cmd two :set preview true; set drawbox true; set ratios 1:1
+cmd three :set preview true; set drawbox true; set ratios 1:2:3
+cmd trash ${{
+	mkdir -p ~/trash
+	IFS="$(printf '\n\t')"; mv $fx ~/trash
+}}
+
+# Maps
+map D :trash
+map gt :cd ~/trash
+map gf
+map xf :touch
+map xd :mkdir
+map xD :delete
+map i $~/dotfiles/config/lf/preview.sh $f
+map oo :one
+map ot :two
+map or :three
+
+# Options
+set preview false
+set drawbox false
+set ratios 1
+set tabstop 4
+set scrolloff 2
+set number true
+set relativenumber true
+
+set errorfmt "\033[41;30;1m"
+set borderfmt "\033[37m"
+set cursoractivefmt "\033[7;1m"
+set cursorpreviewfmt "\033[47;30;1m"
+set promptfmt " \033[34;1m%d\033[0m"
+set numberfmt "\033[37m"
+
+set previewer ~/dotfiles/config/lf/preview.sh

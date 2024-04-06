@@ -1,5 +1,5 @@
 # Aliases
-alias e=nvim
+alias e='nvim --listen $(to-nvim-addr)'
 alias h=helix
 
 alias tnew="tmux new -s"
@@ -52,10 +52,6 @@ alias vol-toggle="pactl set-sink-mute @DEFAULT_SINK@ toggle"
 alias src-aliases="source $DOTFILES/config/zsh/aliases.zsh"
 
 # Functions
-# Run nvim with server
-function nv() {
-	nvim --listen $NVIM_DEF_ADDR $@ 
-}
 function dots() {
 	cd $DOTFILES/$1
 }

@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+
+# source $DOTFILES/config/zsh/functions.zsh
+
+# notify-send $(to-nvim-addr)
+nvim-server --remote $@

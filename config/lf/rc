@@ -1,13 +1,14 @@
 # Cmds
 cmd q :quit
-cmd touch :shell; push touch<space>
-cmd th :touch
-cmd mkdir :shell; push mkdir<space>
-cmd md :mkdir
+cmd th %touch $1
+cmd md %mkdir $1
+cmd touch 
+cmd mkdir :shell; send mkdir<space>
 cmd chmod %chmod $1 $f; lf -remote "send reload"
 cmd one :set preview false; set drawbox false; set ratios 1
 cmd two :set preview true; set drawbox true; set ratios 1:1
 cmd three :set preview true; set drawbox true; set ratios 1:2:3
+cmd edit &cd $OLDPWD && nvim-edit $f
 cmd trash ${{
 	mkdir -p ~/trash
 	IFS="$(printf '\n\t')"; mv $fx ~/trash
@@ -17,13 +18,15 @@ cmd trash ${{
 map D :trash
 map gt :cd ~/trash
 map gf
-map xf :touch
-map xd :mkdir
+map xf :push :th<space> 
+map xd :push :md<space> 
 map xD :delete
 map i $~/dotfiles/config/lf/preview.sh $f
 map oo :one
 map ot :two
 map or :three
+map e :edit
+map <enter> :edit
 
 # Options
 set preview false

@@ -1,0 +1,12 @@
+#!/usr/bin/zsh
+
+source $DOTFILES/config/zsh/functions.zsh
+
+addr=$(to-nvim-addr)
+
+test -e "$addr"
+if [[ ! $? -eq 0 ]]; then
+	exit 1
+fi
+
+nvim --server $addr $@

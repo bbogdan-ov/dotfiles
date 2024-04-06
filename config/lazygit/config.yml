@@ -1,0 +1,5 @@
+os:
+  edit: "nvim-edit {{filename}}"
+  editAtLine: 'name=$(echo {{filename}} | sed -e "s/^\"//" -e "s/\"$//") && nvim-send "<cmd>e $name<cr>{{line}}G"'
+  openDirInEditor: "nvim-edit {{dir}}"
+  editInTerminal: false

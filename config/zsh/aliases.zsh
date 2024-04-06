@@ -49,9 +49,13 @@ alias bdis="bluetoothctl disconnect"
 alias vol-set="pactl set-sink-volume @DEFAULT_SINK@"
 alias vol-toggle="pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
-alias src-aliases="source $DOTFILES/zsh/aliases.zsh"
+alias src-aliases="source $DOTFILES/config/zsh/aliases.zsh"
 
 # Functions
+# Run nvim with server
+function nv() {
+	nvim --listen $NVIM_DEF_ADDR $@ 
+}
 function dots() {
 	cd $DOTFILES/$1
 }

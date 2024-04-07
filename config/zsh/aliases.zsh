@@ -56,5 +56,8 @@ function dots() {
 	cd $DOTFILES/$1
 }
 function count-lines() {
-	find $1 -type f | xargs wc -l
+	find $@ -type f | xargs wc -l
+}
+function count-files() {
+	find $@ -type f | wc -l
 }

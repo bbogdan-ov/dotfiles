@@ -25,7 +25,7 @@ end
 
 require("lazy").setup(list, {
 	dev = {
-		path = "/mnt/Data/projects/nvim"
+		path = "~/projects/nvim"
 	}
 })
 

@@ -16,6 +16,7 @@ opt.signcolumn     = "yes"
 opt.completeopt    = "menu,preview,noinsert"
 opt.scrolloff 	   = 8
 opt.matchpairs     = "(:),{:},[:],<:>,=:;"
+opt.fillchars 	   = "eob: "
 
 opt.showmode = false
 opt.ignorecase = true

@@ -21,6 +21,10 @@ return {
 	{ "n",   "<leader>xx",		"<cmd>vsplit<cr><C-w>l",			"Vertical split" },
 	{ "i",   "jj",				"<esc>",							"Leave insert mode" },
 	{ "n",   "<leader>c/",		"<cmd>noh<cr>", 					"Hide search hl" },
+	{ "n",   "<A-J>",			"<C-v>j",			 				"Enter visual block mode and move down" },
+	{ "n",   "<A-K>",			"<C-v>k",			 				"Enter visual block mode and move up" },
+	{ "v",   "<A-K>",			"k",			 					"Move up" },
+	{ "v",   "<A-J>",			"j",			 					"Move down" },
 
 	{ "n",	 "<leader>k",		c(vim.lsp.buf.hover),				"Open lsp hover" },
 	{ "n",	 "<leader>a",		c(vim.lsp.buf.code_action),			"Open lsp code actions" },

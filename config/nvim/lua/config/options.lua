@@ -17,6 +17,7 @@ opt.completeopt    = "menu,preview,noinsert"
 opt.scrolloff 	   = 8
 opt.matchpairs     = "(:),{:},[:],<:>,=:;"
 opt.fillchars 	   = "eob: "
+opt.shm			   = "fimnwxToOFIcC"
 
 opt.showmode = false
 opt.ignorecase = true

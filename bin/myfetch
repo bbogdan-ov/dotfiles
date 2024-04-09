@@ -1,0 +1,80 @@
+#!/usr/bin/bash
+
+# ----------------------------------------
+# Consts
+# ----------------------------------------
+
+MY_OS=arch
+MY_DE=hyprland
+MY_TERM=kitty
+MY_SHELL=zsh
+
+# ----------------------------------------
+# Vars
+# ----------------------------------------
+
+total_mem=0
+aval_mem=0
+uptime=0
+proc_load=0
+who=$(whoami)
+host=$(hostname)
+
+# ----------------------------------------
+# Get data
+# ----------------------------------------
+
+# Get memory
+while IFS=: read -r key data; do
+	volume="${data%%kB}"
+
+	case $key in
+		MemTotal)
+			total_mem=$((total_mem+=volume))
+			;;
+		MemAvailable)
+			aval_mem=$((aval_mem+=volume))
+			;;
+	esac
+done < /proc/meminfo
+
+# Get uptime
+uptime=$(cat /proc/uptime | cut -d "." -f1)
+
+# Get proc load
+# Thanks to https://stackoverflow.com/a/9229580
+proc_load=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}')
+proc_load="${proc_load%.*}" # Float to int
+
+# ----------------------------------------
+# Draw
+# ----------------------------------------
+
+echo_sleep() {
+	sleep 0.04
+}
+
+title="$who@$host"
+title_len=${#title}
+separator=""
+uptime_hours=$(( uptime / 60 / 60 ))
+uptime_mins=$(( uptime / 60 % 60 ))
+mem=$(( (total_mem - aval_mem) / 1024 ))
+total_mem=$(( total_mem / 1024 ))
+
+for ((i=0; i < $title_len; i++)); do
+	separator+="-"
+done
+
+echo ""
+echo -e "        \e[34m.          \e[32m$title"; echo_sleep
+echo -e "       \e[34m/ \         "; echo_sleep
+echo -e "      \e[34m/   \        $MY_OS, $MY_DE"; echo_sleep
+echo -e "     \e[34m;     \       $MY_TERM, $MY_SHELL"; echo_sleep 
+echo -e "    \e[34m/ \`p^q  \      "; echo_sleep
+echo -e "   \e[34m/  (   )  ,     \e[35muptime: \e[33m${uptime_hours}:${uptime_mins}"; echo_sleep
+echo -e "  \e[34m/ po     oq \    \e[35mmem:    \e[33m${mem} / ${total_mem}"; echo_sleep
+echo -e " \e[34m/o'         'o\   \e[35mproc:   \e[33m${proc_load}%"; echo_sleep
+# echo -e "  \e[34m/ po     oq \    \e[31m███\e[32m███\e[33m███\e[34m███"
+# echo -e " \e[34m/o'         'o\   \e[35m███\e[36m███\e[39m███\e[37m███"
+echo ""

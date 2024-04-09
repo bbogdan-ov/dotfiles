@@ -31,7 +31,7 @@ return {
 		deps = { "nvim-lua/plenary.nvim" },
 		keys = {
 			{ "<leader>f", "<cmd>Tel find_files<cr>",           desc = "Open file picker" },
-			{ "<leader>b", "<cmd>Tel buffers<cr>",              desc = "Open buffers picker" },
+			{ "<leader>e", "<cmd>Tel buffers<cr>",              desc = "Open buffers picker" },
 			{ "<leader>D", "<cmd>Tel diagnostics<cr>",          desc = "Open diagnostics picker" },
 			{ "<leader>s", "<cmd>Tel lsp_document_symbols<cr>", desc = "Open diagnostics picker" },
 			{ "<leader>t", "<cmd>Tel treesitter<cr>", 			desc = "Open treesitter picker" },

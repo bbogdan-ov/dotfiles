@@ -7,6 +7,19 @@ local borders = {
 	preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 }
 
+local function picker_with_preview(opts)
+	return vim.tbl_deep_extend("keep", opts or {}, {
+		prompt_title = "search",
+		previewer = true,
+
+		layout_config = {
+			width = function(_, max_columns, _)
+				return math.min(max_columns, 110)
+			end,
+		}
+	})
+end
+
 require("telescope").setup {
 	defaults = {
 		prompt_prefix = " / ",
@@ -19,7 +32,7 @@ require("telescope").setup {
 				return math.min(max_columns, 80)
 			end,
 			height = function(_, _, max_lines)
-				return math.min(max_lines, 20)
+				return math.min(max_lines, 24)
 			end,
 		},
 
@@ -40,7 +53,12 @@ require("telescope").setup {
 			prompt_title = "buffers",
 			previewer = false,
 			initial_mode = "normal",
-		}
+		},
+		diagnostics = picker_with_preview {
+			initial_mode = "normal"
+		},
+		lsp_document_symbols = picker_with_preview(),
+		treesitter = picker_with_preview()
 	}
 }
 

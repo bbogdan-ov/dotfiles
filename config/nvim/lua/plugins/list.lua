@@ -29,6 +29,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		config = "telescope",
 		deps = { "nvim-lua/plenary.nvim" },
+		cmd = { "Tel", "Telescope" },
 		keys = {
 			{ "<leader>f", "<cmd>Tel find_files<cr>",           desc = "Open file picker" },
 			{ "<leader>e", "<cmd>Tel buffers<cr>",              desc = "Open buffers picker" },

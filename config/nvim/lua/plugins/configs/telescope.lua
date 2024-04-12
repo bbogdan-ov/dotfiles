@@ -36,7 +36,13 @@ require("telescope").setup {
 			end,
 		},
 
-		file_ignore_patterns = { "node_modules", "target", "build", "dist" },
+		file_ignore_patterns = {
+			"node_modules",
+			"target",
+			"build",
+			"dist",
+			"public"
+		},
 
 		mappings = {
 			n = {

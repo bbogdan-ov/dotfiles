@@ -30,3 +30,7 @@ lsp.tsserver.setup {
 lsp.cssls.setup {
 	capabilities = cmp_cap
 }
+
+lsp.rust_analyzer.setup {
+	capabilities = cmp_cap
+}

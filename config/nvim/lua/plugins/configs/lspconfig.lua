@@ -16,7 +16,7 @@ lsp.lua_ls.setup {
 					[vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
 					[vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
 					[vim.fn.stdpath "data" .. "/lazy"] = true,
-					[vim.fn.stdpath "config" .. "/plugins"] = true,
+					[vim.fn.expand "$HOME" .. "/projects/nvim"] = true,
 				},
 			},
 		}

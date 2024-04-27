@@ -16,3 +16,5 @@ plugins=(
 
 # Init zoxide
 eval "$(zoxide init zsh)"
+# Init fzf
+eval "$(fzf --zsh)"

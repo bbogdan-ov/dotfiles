@@ -31,7 +31,7 @@ alias c="cat"
 alias b="bat"
 
 alias md="mkdir"
-alias th="touch"
+alias mf="touch"
 alias ls="eza --color=always --level=2"
 alias ll="ls -l --no-user --no-permissions --time-style=relative --git --modified"
 alias la="ls -A"

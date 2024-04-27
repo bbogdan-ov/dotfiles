@@ -1,13 +1,11 @@
 # Cmds
 cmd q :quit
-cmd th %touch $1
-cmd md %mkdir $1
-cmd touch 
-cmd mkdir :shell; send mkdir<space>
+cmd mf &touch $1
+cmd md &mkdir $1
 cmd chmod %chmod $1 $f; lf -remote "send reload"
-cmd one :set preview false; set drawbox false; set ratios 1
-cmd two :set preview true; set drawbox true; set ratios 1:1
-cmd three :set preview true; set drawbox true; set ratios 1:2:3
+cmd one :set preview false; set ratios 1
+cmd two :set preview true; set ratios 1:1
+cmd three :set preview true; set ratios 1:2:3
 cmd edit &cd $OLDPWD && nvim-edit $f
 cmd trash ${{
 	mkdir -p ~/trash
@@ -15,22 +13,86 @@ cmd trash ${{
 }}
 
 # Maps
-map D :trash
-map gt :cd ~/trash
-map gf
-map xf :push :th<space> 
-map xd :push :md<space> 
-map xD :delete
+clearmaps
+
+map h :updir
+map j :down
+map k :up
+map l :open
+map <c-u> :half-up
+map <c-d> :half-down
+map <c-b> :page-up
+map <c-f> :page-down
+map <c-y> :scroll-up
+map <c-e> :scroll-down
+map gg :top
+map ge :bottom
+map G :bottom
+map H :high
+map M :middle
+map L :low
+map [ :jump-prev
+map ] :jump-next
+
+map mf :push :mf<space>
+map md :push :md<space>
+map cd :push :cd<space>
+map r :rename
 map i $~/dotfiles/config/lf/preview.sh $f
-map oo :one
-map ot :two
-map or :three
 map e :edit
 map <enter> :edit
 
+map dd :cut
+map dD :trash
+map dP :delete
+
+map <space> :toggle; down
+map y :copy
+map p :paste
+map cc :clear
+map cs :unselect
+map cf :setfilter
+map ca :clear; unselect; setfilter
+
+map gh :cd ~
+map gt :cd ~/trash
+map gd :cd ~/dotfiles
+map M :mark-save
+map \' :mark-load
+map \" :mark-remove
+map t :tag-toggle; down
+
+map gf :filter
+map f :find
+map F :find-back
+map / :search
+map ? :search-back
+map n :search-next
+map N :search-prev
+map ; :find-next
+map , :find-prev
+
+map \$ :shell
+map ss :shell
+map \% :shell-pipe
+map sp :shell-pipe
+map \! :shell-wait
+map sw :shell-wait
+map \& :shell-async
+map sa :shell-async
+
+map oo :one
+map o1 :one
+map o2 :two
+map o3 :three
+
+map <c-r> :reload
+map <c-l> :redraw
+map q :quit
+
 # Options
 set preview false
-set drawbox false
+set drawbox true
 set ratios 1
 set tabstop 4
 set scrolloff 2

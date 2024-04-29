@@ -8,11 +8,7 @@
 
 	// Left
 	"hyprland/workspaces": {
-		"format": "<span size='small'>{icon}</span>",
-		"format-icons": {
-			"default": "",
-			"active": ""
-		},
+		"format": "",
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1"
 	},
@@ -25,20 +21,16 @@
 		"spacing": 10
 	},
 	"pulseaudio": {
-		"format": "<span size='medium'>{icon}</span> {volume}%",
-		"format-muted": "󰸈 muted",
+		"format": "<span font='12' rise='-1200'>{icon}</span> {volume}%",
+		"format-muted": "<span font='12' rise='-1800'>󰝟 </span>muted",
 		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
 		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
 		"scroll-step": 5,
-		"tooltip-format": "󰕾 {volume}%",
+		"tooltip-format": "{volume}%",
 		"format-icons": {
-			"headphone": "󰋋",
-			"hands-free": "free",
-			"phone": "󰏲",
-			"portable": "portable",
-			"car": "󰞫 ",
-			"default": ["󰕿", "󰖀", "󰕾"]
+			"default": ["󰕿", "󰖀", "󰕾", "󰕾"]
+			// "default": ["⡀", "⣀", "⣠", "⣤", "⣴", "⣶", "⣶", "⣶"]
 		}
 	},
 

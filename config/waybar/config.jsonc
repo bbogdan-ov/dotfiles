@@ -3,16 +3,16 @@
 	"height": 34,
 	"margin": "10 10 0 10",
 
-	"modules-left": ["custom/icon", "hyprland/workspaces", "hyprland/window"],
-	"modules-right": ["tray", "pulseaudio", "group/network-group", "group/bluetooth-group", "group/battery-group", "clock"],
+	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+	"modules-right": ["tray", "pulseaudio", "network", "group/bluetooth-group", "group/battery-group", "clock"],
 
 	// Left
-	"custom/icon": {
-		"format": "󰣇 ",
-		"on-click": "wofi -S drun"
-	},
 	"hyprland/workspaces": {
-		"format": "{icon}",
+		"format": "<span size='small'>{icon}</span>",
+		"format-icons": {
+			"default": "",
+			"active": ""
+		},
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1"
 	},
@@ -42,22 +42,15 @@
 		}
 	},
 
-	"group/network-group": {
-		"orientation": "inherit",
-		"drawer": {
-			"transition-duration": 300
-		},
-		"modules": ["network", "network#strength"]
-	},
 	"network": {
 		"format": "{icon}",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "󰌘",
 		"format-disconnected": "󰤭",
-		"tooltip-format": "󰤨  {essid} - {iframe}"
-	},
-	"network#strength": {
-		"format": "{signalStrength}%",
-		"tooltip": false
+		"tooltip-format": "connected {iframe} {signalStrength}%",
+		"tooltip-format-wifi": "wifi {essid} {signalStrength}%",
+		"tooltip-format-ethernet": "ethernet {iframe} {signalStrength}%",
+		"tooltip-format-disconnected": "disconnected"
 	},
 
 	"group/bluetooth-group": {
@@ -72,7 +65,7 @@
 		"format-disabled": "󰂲",
 		"format-connected": "󰂱",
 		"tooltip-format": "no connection",
-		"tooltip-format-connected": "󰂯 {device_alias}"
+		"tooltip-format-connected": "{device_alias}"
 	},
 
 	"group/battery-group": {
@@ -89,7 +82,7 @@
 			"critical": 20
 		},
 		"format": "{icon}",
-		"tooltip-format": "󰁹 {capacity}%\n󰥔 {time}",
+		"tooltip": false,
 		"format-charging": "󱐋",
 		"format-plugged": "󱐋",
 		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
@@ -106,6 +99,6 @@
 
 	"clock": {
 		"format": "{:%H:%M}",
-		"tooltip-format": "󰃮 {:%d %h}"
+		"tooltip-format": "{:%d %h, %A}"
 	}
 }

@@ -29,11 +29,25 @@ window#waybar {
 }
 tooltip {
 	color: @white;
-	background: @black;
+	background: @lightblack;
+	border-radius: 2px;
+	border: 2px solid @black;
+}
+menu {
+	padding: 10px;
+	background: @lightblack;
+	border: 2px solid @black;
 	border-radius: 2px;
 }
+menu > * {
+	border-radius: 2px;
+	color: @lightgray;
+}
+menu > *:hover {
+	background: @green;
+	color: @black;
+}
 
-#custom-icon,
 #workspaces,
 #window,
 #tray,
@@ -43,22 +57,17 @@ tooltip {
 #battery,
 #clock {
 	color: @black;
-	padding: 0 8px;
-}
-
-#custom-icon {
-	padding-left: 12px;
-	background: @magenta;
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
+	padding: 0 10px;
 }
 
 #workspaces {
+	padding: 0 8px;
 	background: @lightblack;
-	margin-right: 14px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
 }
 #workspaces button {
-	padding: 0 3px;
+	padding: 0 4px;
 	color: @gray;
 	background: transparent;
 }
@@ -69,18 +78,18 @@ tooltip {
 }
 
 #window {
+	padding: 0 16px;
 	color: @lightgray;
-	margin-right: 15px;
-	padding-left: 0;
 }
 
 #tray {
-	background: @darkgray;
+	background: @lightblack;
 }
 
 #pulseaudio {
 	background: @blue;
-	padding: 0 14px;
+	padding-left: 16px;
+	padding-right: 18px;
 }
 
 #network,
@@ -89,33 +98,42 @@ tooltip {
 	background: @green;
 }
 #network {
-	padding-left: 14px;
-	padding-right: 10px;
+	padding-left: 16px;
+	padding-right: 12px;
 }
-#network.strength {
-	padding-left: 6px;
-	padding-right: 6px;
+#bluetooth {
+	padding-right: 12px;
 }
 #battery {
-	padding-right: 16px;
-}
-#battery.critical {
-	padding-left: 14px;
-	background: @red;
-}
-#battery.warning {
-	padding-left: 14px;
-	background: @yellow;
-	border-right: 2px solid @black;
+	padding-right: 18px;
 }
 #battery.capacity {
 	padding-left: 0;
 	padding-right: 16px;
-	border: none;
+}
+#battery.warning {
+	padding: 0 16px;
+	animation: battery-warning 3s infinite;
+}
+#battery.critical {
+	padding: 0 16px;
+	animation: battery-critical 1s infinite;
+}
+
+@keyframes battery-warning {
+	0% { background: @green; }
+	50% { background: @yellow; }
+	100% { background: @green; }
+}
+@keyframes battery-critical {
+	0% { background: @red; }
+	40% { background: @yellow; }
+	80% { background: @red; }
+	100% { background: @red; }
 }
 
 #clock {
-	padding: 0 14px;
+	padding: 0 16px;
 	background: @yellow;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;

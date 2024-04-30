@@ -58,6 +58,9 @@ return {
 		"terrortylor/nvim-comment",
 		config = "nvim_comment",
 	},
+	{
+		"junegunn/vim-easy-align",
+	},
 
 	-- Custom
 	-- This is custom theme

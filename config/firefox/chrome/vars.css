@@ -1,0 +1,55 @@
+:root {
+	/** Numbers *****************************************/
+
+	/* Toolbar */
+	--c-toolbar-padding:			var(--c-padding);
+	--c-toolbar-gap:				var(--c-toolbar-padding);
+	--c-toolbar-pinned-gap:			12px;
+	
+	--c-tab-size:					var(--c-btn-height);
+	--c-tab-close-btn-size:			18px;
+	--c-tab-padding:				6px;
+	--c-tab-icon-margin:			8px;
+
+	/* Url */
+	--c-url-height:					var(--c-btn-height);
+	--c-url-padding:				2px;
+
+	/* Navbar */
+	--c-navbar-padding:				var(--c-padding);
+	--c-navbar-gap:					var(--c-gap);
+	--c-navbar-height:				calc(var(--c-url-height) + var(--c-navbar-padding) * 2);
+
+	/* Sidebar */
+	--c-sidebar-padding: 			var(--c-padding);
+	--c-sidebar-gap:				var(--c-gap);
+	--c-sidebar-pinned-gap:			12px;
+
+	--c-sidebar-expanded-width:		320px;
+	--c-sidebar-collapsed-width: 	calc(var(--c-tab-size) + var(--c-sidebar-padding) * 2);
+	--c-sidebar-height:				calc(100vh - var(--c-navbar-height));
+
+	--c-sidebar-expand-speed:		.2s;
+	--c-sidebar-collapse-speed:		.2s;
+	--c-sidebar-expand-delay:		.6s;
+
+	/** Colors *****************************************/
+
+	/* Toolbar */
+	--c-toolbar-bg:					var(--c-background);
+
+	--c-tab-bg: 					var(--c-background);
+	--c-tab-selected-bg: 			var(--c-darkgray);
+	--c-tab-hover-bg: 				var(--c-tab-selected-bg);
+
+	/* Url */
+	--c-url-color:					var(--c-white);
+	--c-url-bg:						var(--c-black);
+	--c-url-btn-selected-bg: 		var(--c-gray);
+	--c-url-btn-hover-bg:			var(--c-url-btn-selected-bg);
+	--c-url-focused-bg:				var(--c-darkgray);
+	--c-url-open-border-color:		var(--c-darkgray);
+
+	/* Navbar */
+	--c-navbar-bg:					var(--c-background);
+}

@@ -1,0 +1,20 @@
+#nav-bar {
+	overflow:	   	visible !important;
+	padding:	   	var(--c-navbar-padding) !important;
+	background:    	var(--c-navbar-bg) !important;
+}
+
+/* buttons */
+#nav-bar .toolbarbutton-1 {
+	margin-right:	var(--c-navbar-gap) !important;
+}
+#nav-bar #PanelUI-menu-button {
+	margin-right:  	0 !important;
+}
+#PanelUI-menu-button .toolbarbutton-icon {
+	padding:	   	0 7px !important;
+	padding-top:   	2px !important;
+}
+#downloads-indicator-anchor {
+	padding:	   	7px !important;
+}

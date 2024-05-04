@@ -1,0 +1,38 @@
+/* Style only toolbox buttons */
+#navigator-toolbox {
+	.urlbarView-action,
+	.toolbarbutton-1,
+	.toolbarbutton-icon,
+	.toolbarbutton-badge-stack,
+	.toolbarbutton-text {
+		cursor: pointer !important;
+		fill: var(--c-btn-color) !important;
+		color: var(--c-btn-color) !important;
+		border-radius: var(--c-border-radius) !important;
+		background: var(--c-btn-bg) !important;
+	}
+	.toolbarbutton-1,
+	.toolbarbutton-icon,
+	.toolbarbutton-badge-stack {
+		width: var(--c-btn-height) !important;
+		height: var(--c-btn-height) !important;
+	}
+	.toolbarbutton-badge-stack,
+	.toolbarbutton-1 {
+		padding: 0 !important; 
+	}
+	.toolbarbutton-icon,
+	.toolbarbutton-text {
+		padding: 8px !important;
+	}
+
+	/* States */
+	toolbarbutton:hover :is(
+		.toolbarbutton-icon,
+		.toolbarbutton-text,
+		.toolbarbutton-badge-stack
+	),
+	.urlbarView-action:hover {
+		background: var(--c-btn-hover-bg) !important;
+	}
+}

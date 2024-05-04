@@ -1,0 +1,48 @@
+/* Remove toolbar buttons */
+#alltabs-button,
+.titlebar-buttonbox-container,
+#scrollbutton-up,
+#scrollbutton-down {
+	display: none !important;
+}
+
+/* Remove navbar buttons */
+#forward-button,
+#home-button,
+#library-button,
+#fxa-toolbar-menu-button {
+	display: none !important;
+}
+
+/* Remove urlbar buttons */
+#identity-icon-box,
+#page-action-buttons,
+#pocket-button,
+#urlbar-zoom-button,
+#tracking-protection-icon-container,
+#reader-mode-button,
+#urlbar-search-button,
+#urlbar-go-button {
+	display: none !important;
+}
+
+/* Remove spacers */
+.titlebar-spacer,
+toolbarspring {
+	display: none !important;
+}
+
+/* Remove buttons in top of context menu */
+menupopup #context-navigation,
+menupopup #context-sep-navigation {
+	display: none !important;
+}
+
+/* Remove private indicator label */
+#private-browsing-indicator-with-label {
+	width: var(--c-button-height) !important;
+	height: var(--c-button-height) !important;
+}
+#private-browsing-indicator-with-label label {
+	display: none !important;
+}

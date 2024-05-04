@@ -1,0 +1,13 @@
+@import url(base-vars.css);
+
+* {
+	font-family:	"JetBrainsMono Nerd Font" !important;
+	font-size :		var(--c-font-size) !important;
+	box-shadow:		none !important;
+	border:			none !important;
+	outline:		none !important;
+}
+
+body {
+	background:	  	var(--c-background) !important;
+}

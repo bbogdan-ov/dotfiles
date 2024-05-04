@@ -1,0 +1,26 @@
+.menupopup-arrowscrollbox {
+	padding: 4px !important;
+	background: var(--c-menu-bg) !important;
+	border: 2px solid var(--c-menu-border-color) !important;
+	border-radius: 6px !important;
+}
+menuitem,
+menupopup > menu {
+	border-radius: var(--c-border-radius) !important;
+	cursor: pointer !important;
+}
+menuitem:hover,
+menupopup > menu:hover {
+	background: var(--c-menu-item-hover-bg) !important;
+	color: var(--c-menu-item-hover-color) !important;
+	font-weight: 600 !important;
+}
+menuseparator {
+	height: 2px !important;
+	padding: 0 !important;
+	margin: 4px 0 !important;
+	background: var(--c-menu-border-color) !important;
+}
+menuseparator::after, menuseparator::before {
+	display: none !important;
+}

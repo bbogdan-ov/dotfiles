@@ -1,0 +1,12 @@
+@import url(base.css);
+@import url(chrome/vars.css);
+
+@import url(chrome/buttons.css);
+@import url(chrome/toolbar.css);
+@import url(chrome/urlbar.css);
+@import url(chrome/navbar.css);
+@import url(chrome/menu.css);
+
+@import url(chrome/sidebar.css);
+
+@import url(chrome/remove.css);

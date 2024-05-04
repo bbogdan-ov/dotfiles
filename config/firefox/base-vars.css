@@ -1,0 +1,38 @@
+:root {
+	/* Palette */
+	--c-black: 		#111111;
+	--c-darkgray: 	#222222;
+	--c-gray:		#333333;
+	--c-lightgray: 	#b5b5b5;
+	--c-white: 		#dadada;
+	--c-red: 		#fb5f68;
+	--c-yellow: 	#fadf65;
+	--c-green: 		#a4cd51;
+	--c-cyan: 		#96d8ff;
+	--c-lightcyan: 	#c1d7ff;
+	--c-blue: 		#7998ff;
+	--c-lightblue: 	#94b7ff;
+	--c-magenta: 	#bf93ff;
+	
+	/* Numbers */
+	--c-padding: 				3px;
+	--c-gap: 					var(--c-padding);
+	--c-border-radius: 			4px;
+	--c-font-size: 				13px;
+	
+	--c-btn-height: 			30px;
+	
+	/* Colors */
+	--c-background: 			var(--c-black);
+	--c-separator: 				var(--c-darkgray);
+
+	--c-btn-bg: 				var(--c-background);
+	--c-btn-color:	 			var(--c-white);
+	--c-btn-hover-bg: 			var(--c-darkgray);
+	--c-btn-selected-bg: 		var(--c-btn-hover-bg);
+	
+	--c-menu-bg: 				var(--c-darkgray);
+	--c-menu-border-color: 		var(--c-darkgray);
+	--c-menu-item-hover-bg: 	var(--c-green);
+	--c-menu-item-hover-color: 	var(--c-menu-bg);
+}

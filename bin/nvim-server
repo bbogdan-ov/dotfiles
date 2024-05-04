@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-source $DOTFILES/config/zsh/functions.zsh
+source $ZSH/aliases.zsh
 
 addr=$(to-nvim-addr)
 

@@ -7,6 +7,8 @@ alias tat="tmux at"
 alias tkill="tmux kill"
 alias tls="tmux ls"
 
+alias files="lf -command 'three' -print-selection"
+
 alias ga="git add"
 alias gaa="git add --all"
 alias gs="git status"
@@ -29,6 +31,7 @@ alias x="xargs"
 alias f="find"
 alias c="cat"
 alias b="bat"
+alias d="dirs -v"
 
 alias md="mkdir"
 alias mf="touch"
@@ -53,15 +56,33 @@ alias bdis="bluetoothctl disconnect"
 alias vol-set="pactl set-sink-volume @DEFAULT_SINK@"
 alias vol-toggle="pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
-alias src-aliases="source $DOTFILES/config/zsh/aliases.zsh"
+alias src="source"
+alias src-zsh="src ~/.zshrc"
+alias src-aliases="src $ZSH/aliases.zsh"
 
 # Functions
+# Source plugin
+function plug() {
+	source $ZSH_PLUGINS/$1/$1.zsh
+}
+# Goto dotfiles dir
 function dots() {
 	cd $DOTFILES/$1
 }
+# Count lines in all files
 function count-lines() {
 	find $@ -type f | xargs wc -l
 }
+# Count all files in dir
 function count-files() {
 	find $@ -type f | wc -l
+}
+# Convert cur dir to nvim server address
+function to-nvim-addr() {
+	addr=nvim-$(pwd)
+	addr="${addr//\//-}"
+	addr="${addr// /-}"
+	addr="${addr//./-}"
+	echo /tmp/$addr.sock
+	unset addr
 }

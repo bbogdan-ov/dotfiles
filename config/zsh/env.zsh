@@ -1,6 +1,6 @@
 export EDITOR="nvim"
 export TERMINAL="kitty"
 
-export NVIM_DEF_ADDR=/tmp/nvim # nvim default listen address
+export FIREFOX_PROFILE=$(echo $HOME/.mozilla/firefox/*-release)
 
 export PATH=$PATH:$DOTFILES/bin

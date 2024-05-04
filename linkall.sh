@@ -48,7 +48,7 @@ for file in $(find -type f -iname link); do
 			if [[ $target == '.' ]]; then
 				target_path=$dir
 				target_is_dir=1
-			elif [[ ! -f $target_path ]]; then
+			elif [[ ! -f $target_path ]] && [[ ! -d $target_path ]]; then
 				# Target file not found
 				echo_err "- target file $target_path_pretty not found, skip\n  in $link_path_pretty"
 				continue

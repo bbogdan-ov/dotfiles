@@ -3,9 +3,9 @@ cmd q :quit
 cmd mf &touch $1
 cmd md &mkdir $1
 cmd chmod %chmod $1 $f; lf -remote "send reload"
-cmd one :set preview false; set drawbox false; set ratios 1
-cmd two :set preview true; set drawbox true; set ratios 1:1
-cmd three :set preview true; set drawbox true; set ratios 1:2:3
+cmd one :set ratios 1; set preview false; set drawbox false
+cmd two :set ratios 1:3; set preview false; set drawbox true
+cmd three :set ratios 1:2:3; set preview true; set drawbox true
 cmd edit &cd $OLDPWD && nvim-edit $f
 cmd trash ${{
 	mkdir -p ~/trash
@@ -85,6 +85,7 @@ map oo :one
 map o1 :one
 map o2 :two
 map o3 :three
+map <backspace> :set hidden!
 
 map <c-r> :reload
 map <c-l> :redraw

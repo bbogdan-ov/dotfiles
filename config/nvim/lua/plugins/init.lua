@@ -16,13 +16,16 @@ for _, plugin in ipairs(list) do
 			local is_ok, err = pcall(require, "plugins.configs." .. plugin_conf)
 
 			if not is_ok then
-				-- TODO: catch missing module
-				local is_ok, module = pcall(require, plugin_conf)
+				local is_abs_ok, module = pcall(require, plugin_conf)
 
-				if is_ok then
+				if is_abs_ok then
 					module.setup {}
 				else
-					vim.api.nvim_err_writeln(string.format('Cannot load plugin config "%s"!\nFIRST ERROR: %s;\nSECOND ERROR: %s', plugin_conf, err, module))
+					local msg = string.format(
+						'Cannot load plugin config "%s"!\n\nFIRST ATTEMPT ERROR:\n%s;\n\nSECOND ATTEMPT ERROR:\n%s',
+						plugin_conf, err, module
+					)
+					vim.api.nvim_err_writeln(msg)
 				end
 			end
 		end

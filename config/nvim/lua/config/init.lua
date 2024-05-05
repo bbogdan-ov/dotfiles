@@ -1,10 +1,11 @@
 local editor = require "core.editor"
+local plug = editor.plug
 
 -- Init
-require "config.options"
-require "config.commands"
-require "config.statusline"
-require "config.lsp"
+plug "config.options"
+plug "config.commands"
+plug "config.statusline"
+plug "config.lsp"
 
 -- Init keymaps
 local keymaps = require "config.keymaps"

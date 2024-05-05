@@ -13,6 +13,20 @@ local M = {}
 ---@field desc? string
 ---@field opts? table
 
+---Import/require module, but safer
+---Returns module and error message if exists
+---@param modname string
+---@return any, string | nil
+function M.plug(modname)
+	local is_ok, res = pcall(require, modname)
+	if not is_ok then
+		vim.api.nvim_err_writeln(("MODULE REQUIRE ERROR:\n%s"):format(res))
+		return nil, res
+	end
+
+	return res, nil
+end
+
 ---@param map MyKeymap
 function M.keymap(map)
 	local modes = map[1] or map.modes or { "n" }

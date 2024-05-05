@@ -21,7 +21,7 @@
 		"spacing": 10
 	},
 	"pulseaudio": {
-		"format": "<span font='12' rise='-1200'>{icon}</span> {volume}%",
+		"format": "<span font='10' rise='-500'>{icon}</span> {volume}%",
 		"format-muted": "<span font='12' rise='-1800'>󰝟 </span>muted",
 		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
@@ -30,7 +30,6 @@
 		"tooltip-format": "{volume}%",
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾", "󰕾"]
-			// "default": ["⡀", "⣀", "⣠", "⣤", "⣴", "⣶", "⣶", "⣶"]
 		}
 	},
 

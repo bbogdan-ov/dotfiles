@@ -18,9 +18,9 @@ export HISTFILE=$HOME/.zsh-history
 export HISTSIZE=1000
 export SAVEHIST=1000
 
-setopt HIST_SAVE_NO_DUPS				# Do not save duplicates in history
-setopt AUTO_PUSHD						# Save visited dirs
-setopt PUSHD_IGNORE_DUPS				## Don't save visited duplicates
+setopt histignorealldups				# Do not save duplicates in history
+setopt autopushd						# Save visited dirs
+setopt pushdignoredups					## Don't save visited duplicates
 
 ########################################
 # Autoload
@@ -35,7 +35,17 @@ autoload -Uz prompt.zsh; prompt.zsh		# Load prompt
 # Binds
 ########################################
 
-bindkey -e # Enable emacs keybinds
+bindkey -e 								# Enable emacs keybinds
+
+bindkey '^[[Z' reverse-menu-complete 	# S-Tab - prev completion
+bindkey '^[[1~' beginning-of-line		# Home - goto line start
+bindkey '^[[4~' end-of-line				# End - goto line end
+
+########################################
+# Styles
+########################################
+
+zstyle ':completion:*' menu select		# Menu completion
 
 ########################################
 # Init plugins and tools

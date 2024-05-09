@@ -35,11 +35,10 @@ alias d="dirs -v"
 
 alias md="mkdir"
 alias mf="touch"
-alias ls="eza --color=always --level=2"
-alias ll="ls -l --no-user --no-permissions --time-style=relative --git --modified"
+alias ls="ls --color=always -t -h -p"
+alias ll="ls -l"
 alias la="ls -A"
 alias lla="ll -A"
-alias tree="ls --tree"
 alias cl="clear"
 alias cd="z"
 

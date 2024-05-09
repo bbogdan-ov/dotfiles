@@ -4,10 +4,12 @@ configuration {
 	case-sensitive: 		false;
 	disable-history: 		false;
 
-	window-format: 			"launcher";
+	display-window:  		"#";
 	display-drun:  			"/";
 	display-run:			":";
+	display-ssh:			"%";
 
+	window-format: 			"{class} - {title}";
 	drun-display-format: 	"{name}";
 }
 

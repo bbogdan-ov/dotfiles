@@ -73,11 +73,4 @@ return {
 			vim.cmd "colorscheme custom"
 		end
 	},
-	-- Here are a few of my unsuccessful attempts in creating plugins for nvim
-	{
-		"bbogdan-ov/blueprints.nvim",
-		dev = true,
-		enabled = false,
-		config = "custom.blueprints"
-	},
 }

@@ -87,20 +87,27 @@ hi.Pmenu				   		= { link="Normal" }
 hi.ErrorMsg                		= { link="Error" }
 
 hi.Cursor 				   		= { fg=bg, bg=fg }
-hi.Visual				   		= { reverse=true, bold=true }
+hi.Visual				   		= { fg=bg, bg=gray, bold=true }
 hi.LineNr				   		= { fg=linenr }
 hi.CursorLineNr			   		= { fg=linenr, bg=cursor_line }
 hi.CursorLine 			   		= { bg=cursor_line }
 hi.SignColumn			   		= { fg=linenr, bg=bg }
 hi.MatchParen			   		= { fg=yellow, underline=true }
-hi.Search				   		= { reverse=true }
+hi.Search				   		= { fg=bg, bg=yellow, bold=true }
 hi.Directory					= { fg=blue }
+hi.MyReverse					= { reverse=true, bold=true }
 hi.CursorColumn 		   		= { link = "CursorLine" }
 hi.EndOfBuffer 			   		= { link = "LineNr" }
 
 -- Lines
-hi.StatusLine					= { fg=lightgray, bg=bg }
+hi.StatusLine					= { fg=gray, bg=bg }
 hi.StatusLineNc					= { fg=lightblack, bg=bg }
+hi.MyStatusBufActive			= { fg=green }
+hi.MyStatusBufErr				= { link="DiagnosticError" }
+hi.MyStatusBufWarn				= { link="DiagnosticWarn" }
+hi.MyStatusBufHint				= { link="DiagnosticHint" }
+hi.MyStatusBufInfo				= { link="DiagnosticInfo" }
+hi.MyStatusBuf					= { link="StatusLine" }
 
 -- Diff
 hi.DiffAdd 						= { fg=green }

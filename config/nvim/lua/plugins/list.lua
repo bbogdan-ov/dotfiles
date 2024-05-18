@@ -77,6 +77,7 @@ return {
 	{
 		"bbogdan-ov/blueprints.nvim",
 		dev = true,
+		enabled = false,
 		config = "custom.blueprints"
 	},
 }

@@ -73,5 +73,6 @@ editor.set_hls {
 	TelescopeBorder   			= { fg=palette.gray },
 	TelescopeMatching 			= { fg=palette.green },
 	TelescopePromptPrefix 		= { fg=palette.green },
+	TelescopeSelection 			= { link="MyReverse" },
 	TelescopeTitle 				= { link="Title" },
 }

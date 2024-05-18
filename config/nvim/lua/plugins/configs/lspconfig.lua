@@ -26,11 +26,30 @@ lsp.lua_ls.setup {
 lsp.tsserver.setup {
 	capabilities = cmp_cap
 }
-
 lsp.cssls.setup {
 	capabilities = cmp_cap
 }
-
 lsp.rust_analyzer.setup {
+	capabilities = cmp_cap
+}
+lsp.clangd.setup {
+	capabilities = cmp_cap
+}
+lsp.pyright.setup {
+	capabilities = cmp_cap,
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "openFilesOnly",
+				useLibraryCodeForTypes = true
+			}
+		}
+	},
+	root_dir = lsp.util.root_pattern(
+		"main.py"
+	)
+}
+lsp.html.setup {
 	capabilities = cmp_cap
 }

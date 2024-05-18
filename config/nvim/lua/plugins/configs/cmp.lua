@@ -32,7 +32,7 @@ local kind_icons = {
 local function win()
 	return {
 		border = "single",
-		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:MyReverse,Search:None",
 		zindex = 1001,
 		scrolloff = 0,
 		col_offset = 0,
@@ -50,6 +50,9 @@ cmp.setup {
 		fields = { "abbr", "kind" },
 		format = function(_, item)
 			item.kind = kind_icons[item.kind]
+			if item.menu ~= nil and #item.menu > 10 then
+				item.menu = item.menu:sub(0, 10) .. "…"
+			end
 			return item
 		end
 	},
@@ -90,13 +93,14 @@ cmp.setup.cmdline(":", {
 -- Highlights
 local palette = _G["my_palette"]
 editor.set_hls {
-	CmpItemAbbrMatchFuzzy	= { fg=palette.green },
-	CmpItemAbbrMatch		= { fg=palette.green },
 	CmpItemKindDefault 		= { fg=palette.lightgray },
 	CmpItemKindText	 		= { fg=palette.gray },
+	CmpItemAbbrMatchFuzzy	= { fg=palette.green },
+	CmpItemAbbrMatch		= { fg=palette.green },
 	CmpItemKindEnum 		= { fg=palette.enum },
 	CmpItemKindEnumMember 	= { fg=palette.enum },
 	CmpItemKindClass 		= { fg=palette.structure },
+	CmpItemKindStruct 		= { fg=palette.structure },
 	CmpItemKindField 		= { fg=palette.identifier },
 	CmpItemKindProperty 	= { fg=palette.identifier },
 	CmpItemKindVariable 	= { fg=palette.identifier },
@@ -104,6 +108,7 @@ editor.set_hls {
 	CmpItemKindFunction 	= { fg=palette.func },
 	CmpItemKindMethod	 	= { fg=palette.func },
 	CmpItemKindInterface	= { fg=palette.structure },
+	CmpItemKindModule		= { fg=palette.magenta },
 	CmpItemKindSnippet 		= { fg=palette.green },
 	CmpItemKindEvent 		= { fg=palette.magenta },
 	CmpItemKindFile	 		= { fg=palette.blue },

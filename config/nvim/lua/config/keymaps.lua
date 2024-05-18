@@ -2,6 +2,8 @@ local utils = require "core.utils"
 local c = utils.call
 
 return {
+	{ "nv",  "j",				"gj",								"Go screen line down" },
+	{ "nv",  "k",				"gk",								"Go screen line up" },
 	{ "nvi", "<C-c>",			"<esc>",							"Escape" },
 	{ "n",   "<Tab>",			"<cmd>bn<cr>",						"Next buffer" },
 	{ "n",   "<S-Tab>",			"<cmd>bp<cr>",						"Prev buffer" },
@@ -25,6 +27,8 @@ return {
 	{ "n",   "<A-K>",			"<C-v>k",			 				"Enter visual block mode and move up" },
 	{ "v",   "<A-K>",			"k",			 					"Move up" },
 	{ "v",   "<A-J>",			"j",			 					"Move down" },
+
+	{ "t",   "<esc>",			"<cmd>stopinsert<cr>",			 	"Goto normal mode in term" },
 
 	{ "n",	 "<leader>k",		c(vim.lsp.buf.hover),				"Open lsp hover" },
 	{ "n",	 "<leader>a",		c(vim.lsp.buf.code_action),			"Open lsp code actions" },

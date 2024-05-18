@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+save_to=${1:-~/screenshots}
+
+mkdir -p $save_to
+
+SS=$save_to/shot_$(date +%Y-%m-%d_%H-%M-%S).png
+grim $SS # Take screenshot and save it
+echo $SS

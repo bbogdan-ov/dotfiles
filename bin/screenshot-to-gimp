@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+SS=$(sh ~/dotfiles/bin/screenshot ~/temp)
+gimp $SS # Open screenshot image in gimp
+rm $SS # After editing delete this screenshot
+echo $SS

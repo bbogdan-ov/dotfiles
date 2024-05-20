@@ -41,6 +41,7 @@ alias la="ls -A"
 alias lla="ll -A"
 alias cl="clear"
 alias cd="z"
+alias copy="wl-copy"
 
 alias wifi="nmcli d wifi"
 alias wcon="nmcli d wifi connect"

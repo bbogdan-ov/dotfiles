@@ -1,6 +1,3 @@
-hi clear
-lua << EOF
-
 local black      = "#111111"
 local lightblack = "#222222"
 local darkgray   = "#333333"
@@ -83,6 +80,7 @@ hi.Title				   		= { fg=bg, bg=lightcyan, bold=true }
 hi.VertSplit			   		= { fg=lightblack, bg=bg }
 hi.FloatBorder					= { fg=darkgray, bg=bg }
 hi.NonText 						= { fg=gray }
+hi.NormalFloat					= { link="Normal" }
 hi.Pmenu				   		= { link="Normal" }
 hi.ErrorMsg                		= { link="Error" }
 
@@ -110,9 +108,9 @@ hi.MyStatusBufInfo				= { link="DiagnosticInfo" }
 hi.MyStatusBuf					= { link="StatusLine" }
 
 -- Diff
-hi.DiffAdd 						= { fg=green }
-hi.DiffChange 					= { fg=blue }
-hi.DiffDelete 					= { fg=red }
+hi.Added 						= { fg=green }
+hi.Changed 						= { fg=blue }
+hi.Removed 						= { fg=red }
 
 -- Syntax
 hi.Identifier 					= { fg=identifier }
@@ -129,22 +127,8 @@ hi.Macro						= { fg=macro }
 hi.Todo					   		= { fg=bg, bg=yellow }
 hi.PreProc				   		= { fg=yellow }
 hi.Constant 					= { link="Identifier" }
-hi.Delimeter			   		= { link="Special" }
+hi.Delimiter			   		= { link="Special" }
 hi.Operator 			   		= { link="Special" }
-
--- Treesitter
-hi["@constructor"]				= { link="Structure" }
--- Markdown
-hi["@markup.heading.1"]			= { fg=green }
-hi["@markup.heading.2"]			= { link="@markup.heading.1.markdown" }
-hi["@markup.heading.3"]			= { link="@markup.heading.2.markdown" }
-hi["@markup.heading.4"]			= { link="@markup.heading.3.markdown" }
-hi["@markup.heading.5"]			= { link="@markup.heading.4.markdown" }
-hi["@markup.heading.6"]			= { link="@markup.heading.5.markdown" }
-hi["@markup.strong"] 			= { bold=true }
-hi["@markup.italic"] 			= { italic=true }
-hi["@markup.strikethrough"] 	= { strikethrough=true }
-hi["@markup.link"] 				= { fg=blue, underline=true }
 
 -- Diagnostic              		
 hi.DiagnosticOk 		   		= { fg=ok }
@@ -158,9 +142,31 @@ hi.DiagnosticUnderlineWarn		= { undercurl=true, sp=warn }
 hi.DiagnosticUnderlineInfo		= { undercurl=true, sp=info }
 hi.DiagnosticUnderlineHint 		= { undercurl=true, sp=hint }
 
+-- Treesitter
+hi["@variable"]					= { link="Identifier" }
+hi["@attribute"]				= { link="Statement" }
+hi["@type.builtin"]				= { link="Type" }
+hi["@function.macro"]			= { link="Macro" }
+hi["@variable.builtin"]			= { link="@variable" }
+hi["@constant.builtin"]			= { link="@variable" }
+hi["@attribute.builtin"]		= { link="@attribute" }
+
+-- Lsp
+hi["@lsp.type.selfTypeKeyword"]	= { link="Structure" }
+
+-- Markdown
+hi["@markup.heading.1"]			= { fg=green }
+hi["@markup.heading.2"]			= { link="@markup.heading.1.markdown" }
+hi["@markup.heading.3"]			= { link="@markup.heading.2.markdown" }
+hi["@markup.heading.4"]			= { link="@markup.heading.3.markdown" }
+hi["@markup.heading.5"]			= { link="@markup.heading.4.markdown" }
+hi["@markup.heading.6"]			= { link="@markup.heading.5.markdown" }
+hi["@markup.strong"] 			= { bold=true }
+hi["@markup.italic"] 			= { italic=true }
+hi["@markup.strikethrough"] 	= { strikethrough=true }
+hi["@markup.link"] 				= { fg=blue, underline=true }
+
 --
 for key, style in pairs(hi) do
 	vim.api.nvim_set_hl(0, key, style)
 end
-
-EOF

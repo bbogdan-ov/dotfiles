@@ -55,14 +55,12 @@ return {
 		config = "gitsigns"
 	},
 	{
-		"terrortylor/nvim-comment",
-		config = "nvim_comment",
-	},
-	{
 		"junegunn/vim-easy-align",
 	},
 	{
-		"instant-markdown/vim-instant-markdown"
+		"instant-markdown/vim-instant-markdown",
+		config = "instantmarkdown",
+		event = "BufEnter *.md"
 	},
 
 	-- Custom

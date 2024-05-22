@@ -55,16 +55,10 @@ echo_sleep() {
 }
 
 title="$who@$host"
-title_len=${#title}
-separator=""
 uptime_hours=$(( uptime / 60 / 60 ))
 uptime_mins=$(( uptime / 60 % 60 ))
 mem=$(( (total_mem - aval_mem) / 1024 ))
 total_mem=$(( total_mem / 1024 ))
-
-for ((i=0; i < $title_len; i++)); do
-	separator+="-"
-done
 
 echo ""
 echo -e "        \e[34m.          \e[32m$title"; echo_sleep
@@ -75,6 +69,4 @@ echo -e "    \e[34m/ \`p^q  \      "; echo_sleep
 echo -e "   \e[34m/  (   )  ,     \e[35muptime: \e[33m${uptime_hours}:${uptime_mins}"; echo_sleep
 echo -e "  \e[34m/ po     oq \    \e[35mmem:    \e[33m${mem} / ${total_mem}"; echo_sleep
 echo -e " \e[34m/o'         'o\   \e[35mproc:   \e[33m${proc_load}%"; echo_sleep
-# echo -e "  \e[34m/ po     oq \    \e[31m███\e[32m███\e[33m███\e[34m███"
-# echo -e " \e[34m/o'         'o\   \e[35m███\e[36m███\e[39m███\e[37m███"
 echo ""

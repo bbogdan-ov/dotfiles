@@ -42,6 +42,7 @@ alias lla="ll -A"
 alias cl="clear"
 alias cd="z"
 alias copy="wl-copy"
+alias img="kitten icat"
 
 alias wifi="nmcli d wifi"
 alias wcon="nmcli d wifi connect"

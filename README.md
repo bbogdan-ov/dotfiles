@@ -4,18 +4,20 @@ this is a little collection of my config, script and other files
 
 ## Screenshots
 
-![image](https://github.com/bbogdan-ov/dotfiles/assets/165584864/13f467d6-50aa-49c7-9580-5efc99c64237)
-
-![image](https://github.com/bbogdan-ov/dotfiles/assets/165584864/8368e9dc-353d-41f8-a1ba-682bfbac8e9b)
+![blank](./screenshots/blank.png)
+![terminals](./screenshots/terminals.png)
+![browser](./screenshots/browser.png)
 
 ## How to use
 
+### Defining custom dotfiles path
+
 **To define custom dotfiles path just put this line into your `~/.zshenv`:**
 ```bash
-export DOTFILES=$HOME/mydotfiles/path
+export DOTFILES=$MAYBE_VAR/path/to/dotfiles
 ```
 
-**Syntax of link files:**
+### Syntax of link files
 
 links `rc.zsh` *(relative to dir where link file is located)* to `~/.zshrc`:
 ```
@@ -29,24 +31,29 @@ links current dir to `~/.config/dir`:
 
 you can use your own env variables:
 ```
-rc.zsh = $MY_ENV/.zshrc
+rc.zsh = $MY_VAR/.zshrc
 ```
 
-also multiline files are supported!
+also multiple lines are supported!
 ```
 a.conf = $HOME/.a.conf
 src/b.conf = $MY_ENV/.b.conf
 ```
 
 **After you are done creating config files, run `linkall.sh` to link all files:**
+
 ```bash
-./linkall.sh
+./linkall
 ```
 
 **Hooray!**
+
+## MIT License
+
+Do whatever you want with this DOTFILES
 
 ## P.S.
 
 *this repository is dedicated to my lost dotfiles*
 
-*inspired by [this dotfiles](https://github.com/andrew8088/dotfiles)*
+*inspired by architecture of [this dotfiles](https://github.com/andrew8088/dotfiles)*

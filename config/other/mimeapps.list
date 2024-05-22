@@ -1,0 +1,25 @@
+[Default Applications]
+image/png=mpv.desktop
+image/jpeg=mpv.desktop
+image/gif=mpv.desktop
+image/webp=mpv.desktop
+
+video/mp4=mpv.desktop
+video/avi=mpv.desktop
+
+audio/mp3=mpv.desktop
+audio/wav=mpv.desktop
+audio/ogg=mpv.desktop
+
+text/html=firefox.desktop
+text/xml=firefox.desktop
+application/html=firefox.desktop
+application/xml=firefox.desktop
+application/pdf=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+
+inode/x-empty=nvim.desktop
+text/plain=nvim.desktop
+text/json=nvim.desktop
+application/json=nvim.desktop

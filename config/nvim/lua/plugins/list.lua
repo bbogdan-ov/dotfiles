@@ -61,6 +61,9 @@ return {
 	{
 		"junegunn/vim-easy-align",
 	},
+	{
+		"instant-markdown/vim-instant-markdown"
+	},
 
 	-- Custom
 	-- This is custom theme

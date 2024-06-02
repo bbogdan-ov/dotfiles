@@ -62,6 +62,10 @@ return {
 		config = "instantmarkdown",
 		event = "BufEnter *.md"
 	},
+	{
+		"folke/flash.nvim",
+		config = "flash",
+	},
 
 	-- Custom
 	-- This is custom theme

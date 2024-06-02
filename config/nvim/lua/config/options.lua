@@ -20,6 +20,8 @@ opt.scrolloff 	   	= 8
 opt.matchpairs     	= "(:),{:},[:],<:>"
 opt.fillchars 	   	= "eob: "
 opt.shm			   	= "fimnwxToOFIcC"
+opt.foldcolumn		= "auto:1"
+opt.foldmethod		= "manual"
 
 opt.showmode 	= false
 opt.ignorecase 	= true

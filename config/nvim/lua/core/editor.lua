@@ -44,7 +44,7 @@ function M.keymap(map)
 	vim.keymap.set(modes, key, cmd, opts)
 end
 
----@param hls table[]
+---@param hls table<string, table>
 ---@param ns? integer
 function M.set_hls(hls, ns)
 	ns = ns or 0

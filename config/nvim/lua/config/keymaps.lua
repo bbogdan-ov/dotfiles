@@ -21,12 +21,13 @@ return {
 	{ "n",   "ym",				"y%",								"Yank till pair" },
 	{ "n",   "<leader>xh",		"<cmd>split<cr><C-w>j",				"Horizontal split" },
 	{ "n",   "<leader>xx",		"<cmd>vsplit<cr><C-w>l",			"Vertical split" },
-	{ "i",   "jj",				"<esc>",							"Leave insert mode" },
 	{ "n",   "<leader>c/",		"<cmd>noh<cr>", 					"Hide search hl" },
 	{ "n",   "<A-J>",			"<C-v>j",			 				"Enter visual block mode and move down" },
 	{ "n",   "<A-K>",			"<C-v>k",			 				"Enter visual block mode and move up" },
 	{ "v",   "<A-K>",			"k",			 					"Move up" },
 	{ "v",   "<A-J>",			"j",			 					"Move down" },
+	{ "n",	 "<leader>z",		"za",								"Toggle fold" },
+	{ "n",	 "<leader>Z",		"zA",								"Toggle folds recursively" },
 
 	{ "t",   "<esc>",			"<cmd>stopinsert<cr>",			 	"Goto normal mode in term" },
 

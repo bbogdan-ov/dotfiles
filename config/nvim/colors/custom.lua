@@ -92,6 +92,8 @@ hi.CursorLine 			   		= { bg=cursor_line }
 hi.SignColumn			   		= { fg=linenr, bg=bg }
 hi.MatchParen			   		= { fg=yellow, underline=true }
 hi.Search				   		= { fg=bg, bg=yellow, bold=true }
+hi.CurSearch				   	= { fg=bg, bg=magenta, bold=true }
+hi.Substitute				   	= { fg=bg, bg=red, bold=true }
 hi.Directory					= { fg=blue }
 hi.MyReverse					= { reverse=true, bold=true }
 hi.CursorColumn 		   		= { link = "CursorLine" }
@@ -153,6 +155,9 @@ hi["@attribute.builtin"]		= { link="@attribute" }
 
 -- Lsp
 hi["@lsp.type.selfTypeKeyword"]	= { link="Structure" }
+hi["@lsp.type.lifetime"]		= { link="Special" }
+hi["@lsp.type.macro"]			= { link="Macro" }
+hi["@lsp.typemod.macro.declaration"] = { link="Macro" }
 
 -- Markdown
 hi["@markup.heading.1"]			= { fg=green }

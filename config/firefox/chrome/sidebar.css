@@ -1,68 +1,87 @@
 /* Place titlebar */
 #titlebar {
-	width: 				var(--c-sidebar-collapsed-width);
-	min-height: 		var(--c-sidebar-height) !important;
-	max-height: 		var(--c-sidebar-height) !important;
-	margin-top: 		var(--c-navbar-height) !important;
-	transition: 		width var(--c-sidebar-collapse-speed) !important;
+	width: var(--c-sidebar-collapsed-width);
+	min-height: var(--c-sidebar-height) !important;
+	max-height: var(--c-sidebar-height) !important;
+	margin-top: var(--c-navbar-height) !important;
+	margin-left: 0 !important; 
+	transition: width var(--c-sidebar-collapse-speed), margin-left .3s !important;
 }
 #TabsToolbar {
-	margin: 			0 !important;
-	display: 			flex !important;
-	flex-direction: 	column !important;
+	margin: 0 !important;
+	display: flex !important;
+	flex-direction: column !important;
 }
 #TabsToolbar-customization-target {
-	height: 			100% !important;
-	width: 				100% !important;
+	height: 100% !important;
+	width: 100% !important;
 }
 #tabbrowser-tabs {
-	padding: 			0 !important;
-	min-width: 			100% !important;
-	width: 				100% !important;
-	height: 			100% !important;
+	padding: 0 !important;
+	min-width: 100% !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 #tabbrowser-arrowscrollbox {
-	width: 				100% !important;
-	min-width: 			100% !important;
+	width: 100% !important;
+	min-width: 100% !important;
 }
 /* Make horizontal scrollboxes vertical */
 scrollbox[orient="horizontal"] {
-	display: 			-webkit-box !important;
+	display: -webkit-box !important;
 	-webkit-box-orient: vertical !important;
-	overflow-x: 		hidden !important;
-	overflow-y: 		auto !important;
-	height: 			100% !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	height: 100% !important;
 }
 
 /* Stretch "add tab" button width */
 .toolbarbutton-1#tabs-newtab-button {
-	width: 				100% !important;
-	max-width: 			100% !important;
-	opacity: 			0 !important;
-	transition: 		opacity .2s !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	opacity: 0 !important;
+	transition: opacity .2s !important;
 }
 #navigator-toolbox toolbarbutton#tabs-newtab-button:hover .toolbarbutton-icon {
-	background: 		transparent !important;
+	background: transparent !important;
 }
 #tabs-newtab-button:hover {
-	background: 		var(--c-btn-hover-bg) !important;
+	background: var(--c-btn-hover-bg) !important;
 }
 
 /* Expand titlebar on hover */
-#titlebar:hover {
-	width: 				var(--c-sidebar-expanded-width);
-	transition: 		width var(--c-sidebar-expand-speed) !important;
-	transition-delay: 	var(--c-sidebar-expand-delay) !important;
+html:not([sizemode=fullscreen]) #titlebar:hover {
+	width: var(--c-sidebar-expanded-width);
+	transition: width var(--c-sidebar-expand-speed) !important;
+	transition-delay: var(--c-sidebar-expand-delay) !important;
 }
 /* Show "new tab" button on titlebar hover */
 #titlebar:hover #tabs-newtab-button {
-	opacity: 			1 !important;
+	opacity: 1 !important;
 }
 
 /* Adapt other elements to sidebar */
 #nav-bar {
-	margin-top:    		calc(var(--c-sidebar-height) * -1 - var(--c-navbar-height)) !important;
+	margin-top: calc(var(--c-sidebar-height) * -1 - var(--c-navbar-height)) !important;
 }
 #browser {
-	margin-left: 		var(--c-sidebar-collapsed-width) !important;
+	margin-left: var(--c-sidebar-collapsed-width) !important;
+	transition: margin-left .3s !important;
+}
+#navigator-toolbox {
+	transition: margin-top .3s !important;
+}
+
+/* Only one tab is opened */
+html[sizemode=fullscreen] #titlebar {
+	margin-left: calc(var(--c-sidebar-collapsed-width) * -1) !important;
+	transition: width var(--c-sidebar-collapse-speed), margin-left 1s !important;
+}
+html[sizemode=fullscreen] #browser {
+  margin-left: 0 !important;
+	transition: margin-left 1s !important;
+}
+html[sizemode=fullscreen] #navigator-toolbox {
+	margin-top: -36px;
+	transition: margin-top 1s !important;
 }

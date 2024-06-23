@@ -1,63 +1,63 @@
 #urlbar-container {
-	--urlbar-container-height:	var(--c-url-height) !important;
+	--urlbar-container-height: var(--c-url-height) !important;
 
-	margin:						0 !important;
-	padding:					0 !important;
-	margin-right:				var(--c-navbar-gap) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	margin-right: var(--c-navbar-gap) !important;
 }
 #urlbar {
-	--urlbar-height:			var(--c-url-height) !important;
-	--urlbar-toolbar-height:	var(--c-url-height) !important;;
+	--urlbar-height: var(--c-url-height) !important;
+	--urlbar-toolbar-height: var(--c-url-height) !important;
 
-	min-height:					var(--c-url-height) !important;
-	transition:					margin-top .1s !important;
-	z-index:					1 !important;
+	min-height: var(--c-url-height) !important;
+	transition: margin-top .1s !important;
+	z-index: 1 !important;
 }
 #urlbar-input {
-	padding:					0 var(--c-url-padding) !important;
-	color:						var(--c-url-color) !important;
+	padding: 0 var(--c-url-padding) !important;
+	color: var(--c-url-color) !important;
 }
 #urlbar-background {
-	background:					var(--c-url-bg) !important;
-	border:						2px solid transparent !important;
-	border-radius:				var(--c-border-radius) !important;
+	background: var(--c-url-bg) !important;
+	border: 2px solid transparent !important;
+	border-radius: var(--c-border-radius) !important;
 }
 #identity-permission-box {
-	border-radius:				var(--c-border-radius) !important;
-	height:						calc(100% - var(--c-url-padding) * 2) !important;
-	margin-top:					var(--c-url-padding) !important;
+	border-radius: var(--c-border-radius) !important;
+	height: calc(100% - var(--c-url-padding) * 2) !important;
+	margin-top: var(--c-url-padding) !important;
 }
 #identity-box {
-	margin-left:				var(--c-url-padding) !important;
-	fill:						var(--c-btn-color) !important;
-	color:						var(--c-btn-color) !important;
+	margin-left: var(--c-url-padding) !important;
+	fill: var(--c-btn-color) !important;
+	color: var(--c-btn-color) !important;
 }
 /* states */
 #urlbar[open] {
-	margin-top:					6px !important;
+	margin-top: 6px !important;
 }
 #urlbar[focused] #urlbar-background {
-	background:					var(--c-url-focused-bg) !important;
+	background: var(--c-url-focused-bg) !important;
 }
 #urlbar[open] #urlbar-background {
-	background:					var(--c-url-focused-bg) !important;
-	border-color:				var(--c-url-open-border-color) !important;
-	top:						-4px !important;
+	background: var(--c-url-focused-bg) !important;
+	border-color: var(--c-url-open-border-color) !important;
+	top: -4px !important;
 }
 /* buttons */
 #urlbar-search-mode-indicator {
-	background:					var(--c-navbar-bg) !important;
+	background: var(--c-navbar-bg) !important;
 }
 .urlbarView-row,
 .searchbar-engine-one-off-item,
 #urlbar-search-mode-indicator {
-	border-radius:				var(--c-border-radius) !important;
+	border-radius: var(--c-border-radius) !important;
 }
 .urlbarView-row[selected],
 .searchbar-engine-one-off-item[selected] {
-	background:					var(--c-url-btn-selected-bg) !important;
+	background: var(--c-url-btn-selected-bg) !important;
 }
 .urlbarView-row:hover,
 .searchbar-engine-one-off-item:hover {
-	background:					var(--c-url-btn-hover-bg) !important;
+	background: var(--c-url-btn-hover-bg) !important;
 }

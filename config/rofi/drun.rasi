@@ -1,3 +1,7 @@
+/* vi: ft=css */
+
+@import "base.rasi"
+
 configuration {
 	show-icons: 			false;
 	drun-show-actions: 		false;
@@ -6,47 +10,11 @@ configuration {
 
 	display-window:  		"#";
 	display-drun:  			"/";
-	display-run:			":";
-	display-ssh:			"%";
+	display-run:			"$";
+	display-ssh:			"@";
 
 	window-format: 			"{class} - {title}";
 	drun-display-format: 	"{name}";
-}
-
-* {
-	font: "JetBrainsMono Nerd Font 14px";
-
-	/* Vars */
-	black:      #111111;
-	lightblack: #222222;
-	darkgray:   #333333;
-	gray:       #444444;
-	lightgray:  #b5b5b5;
-	white:      #dadada;
-	red:        #fb5f68;
-	yellow:     #fadf65;
-	green:      #a4cd51;
-	blue:       #7998ff;
-	magenta:    #bf93ff;
-	skygray:	#727d79;
-
-	border-radius:				2px;
-	border-width:				2px;
-
-	background-color: 			var(black);
-	border-color: 				var(lightblack);
-	text-color: 				var(lightgray);
-	muted-color: 				var(darkgray);
-
-	input-color: 				var(border-color);
-	input-placeholder-color: 	var(gray);
-	prompt-color: 				var(green);
-
-	element-color: 				var(background-color);
-	element-alt-color: 			white / 2%;
-	element-text-color: 		var(text-color);
-	element-active-color: 		var(magenta);
-	element-active-text-color: 	var(background-color);
 }
 
 /* Window */
@@ -58,7 +26,7 @@ window {
 	anchor: 			north;
 	y-offset: 			30px;
 
-	border-radius:		8px;
+	border-radius:		4px;
 	border: 			@border-width;
 	border-color:		@border-color;
 	background-color: 	@background-color;
@@ -76,7 +44,7 @@ mainbox {
 /* Input */
 inputbar {
     children:			["prompt", "entry"];
-	padding: 			20px 20px 20px 20px;
+	padding: 			20px;
 
     spacing:			10px;
     border:				0;
@@ -123,17 +91,27 @@ element {
     text-color:			@element-text-color;
     background-color:	@element-color;
 }
+element alternate.normal,
 element normal.normal {
     text-color:			@element-text-color;
     background-color:	@element-color;
 }
-element alternate.normal {
-    text-color:			@element-text-color;
-    background-color:	@element-alt-color;
-}
+/* element alternate.normal { */
+/*     text-color:			@element-text-color; */
+/*     background-color:	@element-alt-color; */
+/* } */
 element selected.normal {
     text-color:			@element-active-text-color;
     background-color:	@element-active-color;
+}
+element normal.active,
+element alternate.active {
+    text-color:			#00f;
+    background-color:	#f00;
+}
+element selected.active {
+    text-color:			#f00;
+    background-color:	#0f0;
 }
 
 /* Misc */

@@ -1,0 +1,37 @@
+/* vi: ft=css */
+
+* {
+	font: "JetBrainsMono Nerd Font 14px";
+
+	/* Vars */
+	black:      #111111;
+	lightblack: #222222;
+	darkgray:   #333333;
+	gray:       #444444;
+	lightgray:  #b5b5b5;
+	white:      #dadada;
+	red:        #fb5f68;
+	yellow:     #fadf65;
+	green:      #a4cd51;
+	blue:       #7998ff;
+	magenta:    #bf93ff;
+	skygray:	#727d79;
+
+	border-radius:				2px;
+	border-width:				2px;
+
+	background-color: 			var(black);
+	border-color: 				var(lightblack);
+	text-color: 				var(lightgray);
+	muted-color: 				var(darkgray);
+
+	input-color: 				var(border-color);
+	input-placeholder-color: 	var(gray);
+	prompt-color: 				var(green);
+
+	element-color: 				var(background-color);
+	element-alt-color: 			white / 2%;
+	element-text-color: 		var(text-color);
+	element-active-color: 		var(magenta);
+	element-active-text-color: 	var(background-color);
+}

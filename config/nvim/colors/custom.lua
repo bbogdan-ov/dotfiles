@@ -149,6 +149,9 @@ hi["@variable"]					= { link="Identifier" }
 hi["@attribute"]				= { link="Statement" }
 hi["@type.builtin"]				= { link="Type" }
 hi["@function.macro"]			= { link="Macro" }
+hi["@tag"]						= { link="Structure" }
+hi["@tag.attribute"]			= { link="Identifier" }
+hi["@string.special.url"]		= { fg=cyan, underline=true }
 hi["@variable.builtin"]			= { link="@variable" }
 hi["@constant.builtin"]			= { link="@variable" }
 hi["@attribute.builtin"]		= { link="@attribute" }
@@ -160,7 +163,7 @@ hi["@lsp.type.macro"]			= { link="Macro" }
 hi["@lsp.typemod.macro.declaration"] = { link="Macro" }
 
 -- Markdown
-hi["@markup.heading.1"]			= { fg=green }
+hi["@markup.heading.1"]			= { fg=black, bg=green, bold=true }
 hi["@markup.heading.2"]			= { link="@markup.heading.1.markdown" }
 hi["@markup.heading.3"]			= { link="@markup.heading.2.markdown" }
 hi["@markup.heading.4"]			= { link="@markup.heading.3.markdown" }

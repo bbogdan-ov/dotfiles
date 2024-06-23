@@ -7,9 +7,8 @@ local map = editor.keymap
 
 flash.setup {
 	modes = {
-		search = {
-			enabled = true
-		}
+		search = { enabled = true },
+		char = { enabled = false },
 	},
 	remote_op = {
 		restore = true,
@@ -20,7 +19,7 @@ flash.setup {
 	}
 }
 
-map { "vn", "ss", c(flash.jump), "Activate flash!" }
-map { "o", "r", c(flash.remote), "Activate remote flash" }
-map { "vn", "sd", c(flash.treesitter), "Activate flash treesitter" }
-map { "vn", "sD", c(flash.treesitter_search), "Activate flash treesitter search" }
+-- map { "vn", "ss", c(flash.jump), "Activate flash!" }
+-- map { "o", "r", c(flash.remote), "Activate remote flash" }
+-- map { "vn", "sd", c(flash.treesitter), "Activate flash treesitter" }
+-- map { "vn", "sD", c(flash.treesitter_search), "Activate flash treesitter search" }

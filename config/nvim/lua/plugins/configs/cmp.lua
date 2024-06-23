@@ -44,7 +44,7 @@ end
 cmp.setup {
 	window = {
 		completion 	  = win(),
-        documentation = win(),
+		documentation = win(),
 	},
 	formatting = {
 		fields = { "abbr", "kind" },

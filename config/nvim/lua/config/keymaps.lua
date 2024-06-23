@@ -4,21 +4,19 @@ local c = utils.call
 return {
 	{ "nv",  "j",				"gj",								"Go screen line down" },
 	{ "nv",  "k",				"gk",								"Go screen line up" },
-	{ "nvi", "<C-c>",			"<esc>",							"Escape" },
+	{ "nvio","<C-c>",			"<esc>",							"Escape" },
 	{ "n",   "<Tab>",			"<cmd>bn<cr>",						"Next buffer" },
 	{ "n",   "<S-Tab>",			"<cmd>bp<cr>",						"Prev buffer" },
 	{ "n",   "<leader>w",		"<cmd>bd<cr>",						"Delete buffer" },
 	{ "n",   "<leader>W",		"<cmd>bufdo bd<cr>",				"Delete all buffers" },
-	{ "nv",  "<C-l>",			"$",								"Goto line end" },
-	{ "nv",  "<C-h>",			"^",								"Goto line start" },
+	{ "nvo", "<C-l>",			"$",								"Goto line end" },
+	{ "nvo", "<C-h>",			"^",								"Goto line start" },
 	{ "nv",  "U",				"<C-r>",							"Redo" },
 	{ "nv",  "]<space>",		"<cmd>norm o<cr>",					"Add line below" },
 	{ "nv",  "[<space>",		"<cmd>norm O<cr>",					"Add line above" },
 	{ "n",   "dc",              '0"_D',								"Clear line" },
 	{ "nv",  "mm",				"%",								"Goto pair" },
-	{ "n",   "dm",				"d%",								"Delete till pair" },
-	{ "n",   "cm",				"c%",								"Change till pair" },
-	{ "n",   "ym",				"y%",								"Yank till pair" },
+	{ "o",   "m",				"%",								"Goto pair" },
 	{ "n",   "<leader>xh",		"<cmd>split<cr><C-w>j",				"Horizontal split" },
 	{ "n",   "<leader>xx",		"<cmd>vsplit<cr><C-w>l",			"Vertical split" },
 	{ "n",   "<leader>c/",		"<cmd>noh<cr>", 					"Hide search hl" },
@@ -36,6 +34,7 @@ return {
 	{ "n",	 "gd",				c(vim.lsp.buf.definition),			"Goto definition" },
 	{ "n",	 "gr",				c(vim.lsp.buf.references),			"Goto references" },
 	{ "n",	 "<leader>r",		c(vim.lsp.buf.rename),				"Rename" },
+	{ "nv",	 "<leader>lf",		c(vim.lsp.buf.format),				"Format" },
 	{ "n",	 "<leader>d",		c(vim.diagnostic.open_float),		"Open diagnostic float" },
 	{ "n",	 "]d",				c(vim.diagnostic.goto_next),		"Goto next diagnostic" },
 	{ "n",	 "[d",				c(vim.diagnostic.goto_prev),		"Goto prev diagnostic" },
@@ -51,6 +50,8 @@ return {
 
 	{ "i",   "<C-e>",			"<cmd>norm $<cr>" },
 	{ "i",   "<C-a>",			"<cmd>norm ^<cr>" },
+
+	{ "vn",  "ga",				"<Plug>(EasyAlign)" },
 
 	-- Unbind
 	{ "nv", "<left>",  "" },

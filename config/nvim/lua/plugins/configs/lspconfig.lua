@@ -53,3 +53,6 @@ lsp.pyright.setup {
 lsp.html.setup {
 	capabilities = cmp_cap
 }
+lsp.vuels.setup {
+	capabilities = cmp_cap
+}

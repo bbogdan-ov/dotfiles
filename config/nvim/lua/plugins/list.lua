@@ -4,12 +4,14 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		config = "treesitter",
+		event = "BufEnter"
 	},
 
 	-- Lsp
 	{
 		"neovim/nvim-lspconfig",
-		config = "lspconfig"
+		config = "lspconfig",
+		event = "BufEnter"
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -21,7 +23,8 @@ return {
 			"hrsh7th/cmp-cmdline",
 
 			"L3MON4D3/LuaSnip"
-		}
+		},
+		event = { "InsertEnter", "CmdlineEnter" }
 	},
 
 	-- Quality of life
@@ -41,11 +44,12 @@ return {
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = "colorizer",
+		event = "BufEnter"
 	},
 	{
 		"mattn/emmet-vim",
 		cmd = "Emmet",
-		event = "BufEnter *.html",
+		event = "BufEnter *.html, BufEnter *.css",
 		keys = {
 			{ "<leader>m", ":Emmet ", desc = "Start emmet" }
 		}
@@ -56,6 +60,7 @@ return {
 	},
 	{
 		"junegunn/vim-easy-align",
+		event = "BufEnter"
 	},
 	{
 		"instant-markdown/vim-instant-markdown",
@@ -65,6 +70,28 @@ return {
 	{
 		"folke/flash.nvim",
 		config = "flash",
+		event = "VeryLazy",
+		keys = {
+			{ "ss", mode = { "n", "v" }, function() require "flash".jump() end, desc = "Activate flash!" },
+			{ "r",  mode = { "o" },      function() require "flash".remote() end, desc = "Activate remote flash" },
+			{ "st", mode = { "n", "v" }, function() require "flash".treesitter() end, desc = "Activate flash treesitter" },
+			{ "sT", mode = { "n", "v" }, function() require "flash".treesitter_search() end, desc = "Activate flash treesitter search" },
+		}
+	},
+	{
+		"nvimdev/indentmini.nvim",
+		config = "indent",
+		event = "BufEnter"
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {}
+	},
+	{
+		"echasnovski/mini.surround",
+		event = "VeryLazy",
+		opts = {}
 	},
 
 	-- Custom

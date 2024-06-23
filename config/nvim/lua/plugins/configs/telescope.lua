@@ -47,6 +47,10 @@ require("telescope").setup {
 		mappings = {
 			n = {
 				["<C-c>"] = actions.close,
+			},
+			i = {
+				["<C-k>"] = actions.move_selection_previous,
+				["<C-j>"] = actions.move_selection_next,
 			}
 		}
 	},

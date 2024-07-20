@@ -11,7 +11,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = "lspconfig",
-		event = "BufEnter"
+		event = "VeryLazy"
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -24,7 +24,7 @@ return {
 
 			"L3MON4D3/LuaSnip"
 		},
-		event = { "InsertEnter", "CmdlineEnter" }
+		event = "BufEnter"
 	},
 
 	-- Quality of life
@@ -42,35 +42,31 @@ return {
 		},
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = "colorizer",
-		event = "BufEnter"
-	},
-	{
-		"mattn/emmet-vim",
-		cmd = "Emmet",
-		event = "BufEnter *.html, BufEnter *.css",
-		keys = {
-			{ "<leader>m", ":Emmet ", desc = "Start emmet" }
+		"brenoprata10/nvim-highlight-colors",
+		event = "BufEnter",
+		opts = {
+			enable_hex = true,
+			enable_short_hex = true,
+			enable_rgb = true,
+			enable_hsl = true,
+			enable_var_usage = true,
+			enable_named_colors = true,
 		}
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		config = "gitsigns"
+		config = "gitsigns",
+		event = "VeryLazy"
 	},
 	{
 		"junegunn/vim-easy-align",
-		event = "BufEnter"
-	},
-	{
-		"instant-markdown/vim-instant-markdown",
-		config = "instantmarkdown",
-		event = "BufEnter *.md"
+		keys = {
+			{ "ga",	mode = { "v", "n" }, "<Plug>(EasyAlign)" }
+		}
 	},
 	{
 		"folke/flash.nvim",
 		config = "flash",
-		event = "VeryLazy",
 		keys = {
 			{ "ss", mode = { "n", "v" }, function() require "flash".jump() end, desc = "Activate flash!" },
 			{ "r",  mode = { "o" },      function() require "flash".remote() end, desc = "Activate remote flash" },
@@ -86,11 +82,18 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {}
+		config = function()
+			local pairs = require "nvim-autopairs"
+			local Rule = require "nvim-autopairs.rule"
+
+			pairs.setup {}
+
+			pairs.add_rule(Rule("<", ">"))
+		end
 	},
 	{
 		"echasnovski/mini.surround",
-		event = "VeryLazy",
+		event = "InsertEnter",
 		opts = {}
 	},
 

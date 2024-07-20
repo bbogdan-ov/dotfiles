@@ -4,7 +4,7 @@ local c = utils.call
 return {
 	{ "nv",  "j",				"gj",								"Go screen line down" },
 	{ "nv",  "k",				"gk",								"Go screen line up" },
-	{ "nvio","<C-c>",			"<esc>",							"Escape" },
+	{ "nvis","<C-c>",			"<esc>",							"Escape" },
 	{ "n",   "<Tab>",			"<cmd>bn<cr>",						"Next buffer" },
 	{ "n",   "<S-Tab>",			"<cmd>bp<cr>",						"Prev buffer" },
 	{ "n",   "<leader>w",		"<cmd>bd<cr>",						"Delete buffer" },
@@ -26,6 +26,8 @@ return {
 	{ "v",   "<A-J>",			"j",			 					"Move down" },
 	{ "n",	 "<leader>z",		"za",								"Toggle fold" },
 	{ "n",	 "<leader>Z",		"zA",								"Toggle folds recursively" },
+	{ "v",   ">",				">gv",			 					"Add indentation" },
+	{ "v",   "<",				"<gv",			 					"Remove indentation" },
 
 	{ "t",   "<esc>",			"<cmd>stopinsert<cr>",			 	"Goto normal mode in term" },
 
@@ -34,12 +36,12 @@ return {
 	{ "n",	 "gd",				c(vim.lsp.buf.definition),			"Goto definition" },
 	{ "n",	 "gr",				c(vim.lsp.buf.references),			"Goto references" },
 	{ "n",	 "<leader>r",		c(vim.lsp.buf.rename),				"Rename" },
-	{ "nv",	 "<leader>lf",		c(vim.lsp.buf.format),				"Format" },
+	{ "nv",	 "glf",				c(vim.lsp.buf.format),				"Format" },
 	{ "n",	 "<leader>d",		c(vim.diagnostic.open_float),		"Open diagnostic float" },
 	{ "n",	 "]d",				c(vim.diagnostic.goto_next),		"Goto next diagnostic" },
 	{ "n",	 "[d",				c(vim.diagnostic.goto_prev),		"Goto prev diagnostic" },
 
-	{ "v",   "p",				'"0P',								"Delete and paste" },
+	{ "v",   "p",				'""P',								"Delete and paste" },
 	{ "n",   "<leader>p",       '"+p',								"Paste after from sys clipboard" },
 	{ "n",   "<leader>P",       '"+P',								"Paste before from sys clipboard" },
 	{ "nv",  "<leader>y",       '"+y',								"Yank to sys clipboard" },
@@ -48,14 +50,13 @@ return {
 	{ "nv",  "<A-c>",			'"_c',								"Change without yunking" },
 	{ "n",   "x",				'"_x',								"Delete one char without yunking" },
 
-	{ "i",   "<C-e>",			"<cmd>norm $<cr>" },
+	{ "i",   "<C-e>",			"<end>" },
 	{ "i",   "<C-a>",			"<cmd>norm ^<cr>" },
-
-	{ "vn",  "ga",				"<Plug>(EasyAlign)" },
 
 	-- Unbind
 	{ "nv", "<left>",  "" },
 	{ "nv", "<up>",    "" },
 	{ "nv", "<right>", "" },
 	{ "nv", "<down>",  "" },
+	{ "v",  "K",  	   "" },
 }

@@ -56,3 +56,6 @@ lsp.html.setup {
 lsp.vuels.setup {
 	capabilities = cmp_cap
 }
+lsp.emmet_language_server.setup {
+	capabilities = cmp_cap
+}

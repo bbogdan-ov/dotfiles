@@ -5,6 +5,10 @@ local severity = vim.diagnostic.severity
 local NO_NAME 		= "<no name>"
 local DIAGN_SIGN 	= "x"
 
+local function buf_opt(buf, name)
+	return api.nvim_get_option_value(name, { buf = buf })
+end
+
 local function render_buf_diagnostic(buf)
 	local hl = ""
 
@@ -20,7 +24,7 @@ local function render_buf_diagnostic(buf)
 		hl = "%#MyStatusBufHint#"
 	end
 
-	if #hl > 0 then
+	if hl ~= "" then
 		return " " .. hl .. DIAGN_SIGN, errs, warns, hints
 	end
 
@@ -37,8 +41,8 @@ local function render_buf(buf)
 	local postfix 	= ""
 	local diagn, errs, warns, hints = render_buf_diagnostic(buf)
 
-	local modified = api.nvim_buf_get_option(buf, "modified")
-	local readonly = api.nvim_buf_get_option(buf, "readonly")
+	local modified = buf_opt(buf, "modified")
+	local readonly = buf_opt(buf, "readonly")
 
 	if api.nvim_get_current_buf() == buf then
 		-- Buf is current
@@ -95,7 +99,7 @@ local function render()
 	-- List all buffers
 	for _, buf in ipairs(api.nvim_list_bufs()) do
 		-- We are need only listed and loaded buffers
-		local listed = api.nvim_buf_get_option(buf, "buflisted")
+		local listed = buf_opt(buf, "buflisted")
 		local loaded = api.nvim_buf_is_loaded(buf)
 		if listed and loaded then
 			local buf_text = render_buf(buf)

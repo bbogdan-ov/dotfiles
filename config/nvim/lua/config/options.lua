@@ -18,10 +18,12 @@ opt.signcolumn     	= "yes"
 opt.completeopt    	= "menu,preview,noinsert"
 opt.scrolloff 	   	= 8
 opt.matchpairs     	= "(:),{:},[:],<:>"
-opt.fillchars 	   	= "eob: "
+opt.fillchars 	   	= "eob: ,foldsep: "
 opt.shm			   	= "fimnwxToOFIcC"
 opt.foldcolumn		= "auto:1"
+opt.foldexpr		= "nvim_treesitter#foldexpr()"
 opt.foldmethod		= "manual"
+opt.foldtext		= ""
 
 opt.showmode 	= false
 opt.ignorecase 	= true

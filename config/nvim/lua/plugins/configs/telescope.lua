@@ -67,8 +67,9 @@ require("telescope").setup {
 		diagnostics = picker_with_preview {
 			initial_mode = "normal"
 		},
+		live_grep = picker_with_preview(),
 		lsp_document_symbols = picker_with_preview(),
-		treesitter = picker_with_preview()
+		treesitter = picker_with_preview(),
 	}
 }
 
